@@ -1,0 +1,8 @@
+#import packages and functions
+
+import(grid)
+import(lattice)
+
+#export functions
+exportPattern("^[^\\.]")
+
