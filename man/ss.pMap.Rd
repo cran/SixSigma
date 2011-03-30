@@ -6,10 +6,10 @@ Process Map
 }
 \description{
 This function takes information about the process we want
-  to represent and draw the Map Process, whith its X's, x's, Y's and y's}
+  to represent and draw the Map Process, with its X's, x's, Y's and y's}
 \usage{
 ss.pMap(procs, inputs.overall, outputs.overall, input.output,
-x.parameters, y.features, main = "Six Sigma Process Map", sub, palette =
+x.parameters, y.features, main = "Six Sigma Process Map", sub, ss.col =
 c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
 }
 
@@ -24,8 +24,8 @@ A vector of characters with the name of the overall inputs
 A vector of characters with the name of the overall outputs
 }
   \item{input.output}{
-A vector of lists with the names of the inputs of the 'i-th' process,
-  that will be the outputs of the (i-1)th process
+A vector of lists with the names of the inputs of the \eqn{i-{th}} process,
+  that will be the outputs of the \eqn{(i-1)-{th}} process
 }
   \item{x.parameters}{
 A vector of lists with a list of the x parameters of the process. The
@@ -36,30 +36,30 @@ A vector of lists with a list of the x parameters of the process. The
   feature is a vector with two values: the name and the type (view details)
 }
   \item{main}{
-The main title for the Proecess Map
+The main title for the Process Map
 }
 \item{sub}{
   Subtitle for the diagram (recommended the Six Sigma project name)
 }
-\item{palette}{
-  A vector of colors for a personalized drawing. At least five colors,
+\item{ss.col}{
+  A vector of colours for a custom drawing. At least five colours,
   sorted by descendant intensity (see details)
 }
 }
 \details{
-The type of the x parameters and y features can be: C(controllable),
-N(noise), Cr(Critical), P(Procedure).
-The default value for palette is c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD",
-  "#EEEEEE"), a grayscale style. You can pass any accepted color string.
+The type of the x parameters and y features can be: C(controllable), 
+N(noise), Cr(Critical), P(Procedure). The default value for ss.col is 
+c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"), a grayscale style. 
+You can pass any accepted color string.
 }
 \value{
 A graphic representation of the Map Process.
 }
 \references{
-  \url{ http://en.wikipedia.org/wiki/Business_Process_Mapping}
+  \url{http://en.wikipedia.org/wiki/Business_Process_Mapping}
 }
 \author{
-Emilio Lopez Cano
+Emilio Lopez
 }
 \note{
 The process map is the starting point for a Six Sigma Project, and it is
@@ -75,7 +75,7 @@ outputs.overall<-c("helicopter")
 procs<-c("INSPECTION", "ASSEMBLY", "TEST", "LABELING")
 #Inputs of process "i" are inputs of process "i+1"
 input.output<-vector(mode="list",length=length(procs))
-input.output[1]<-list(c("sheets", "OTRO"))
+input.output[1]<-list(c("sheets", "..."))
 input.output[2]<-list(c("sheets"))
 input.output[3]<-list(c("helicopter"))
 input.output[4]<-list(c("helicopter"))
@@ -102,7 +102,8 @@ y.features[4]<-list(c(list(c("label", "Cr"))))
 y.features
 
 ss.pMap(procs, inputs.overall, outputs.overall,
-        input.output, x.parameters, y.features, sub="Paper Helicopter Project")
+        input.output, x.parameters, y.features, 
+        sub="Paper Helicopter Project")
 }
 \keyword{ Ishikawa }
 \keyword{ cause-and-effect }

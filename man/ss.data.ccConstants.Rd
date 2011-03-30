@@ -21,11 +21,11 @@ Data with constants for control charts limits
 Shewhart's constants for control charts limits computation.
 }
 \source{
-  Montgomery, DC (2005). Introduction to Statistical Quality Control
+Montgomery, DC (2005). Introduction to Statistical Quality Control
   (Fifth Edition). New York: Wiley&Sons\cr
 }
 \references{
-  Montgomery, DC (2005). Introduction to Statistical Quality Control
+Montgomery, DC (2005). Introduction to Statistical Quality Control
   (Fifth Edition). New York: Wiley&Sons\cr
 }
 \examples{

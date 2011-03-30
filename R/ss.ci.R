@@ -1,6 +1,4 @@
-ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
-                main="Confidence Interval for the mean", sub="",
-		palette=c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
+ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x", approx.z=TRUE, main="Confidence Interval for the mean", sub="", ss.col=c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
     if (is.data.frame(data)){
         attach(data, warn.conflicts=FALSE)
     }
@@ -9,12 +7,12 @@ ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
     m<-mean(x,na.rm=TRUE)
     n<-length(x)-na
     s<-ifelse(is.numeric(sigma),sqrt(sigma),sd(x, na.rm=TRUE))
-    if (is.numeric(sigma)||n>30){
+    if (is.numeric(sigma)|| n>30 || approx.z==TRUE){
         st<-qnorm(1-(alpha/2))
         st.dist<-c("z")
     }
     else{
-        cat("\nWarning: the sample size is less than 30. Check Normality\n\n")
+        message("\nWarning: the sample size is less than 30. Check Normality\n\n")
         st<-qt(1-(alpha/2),n-1)
         st.dist<-c("t")
     }
@@ -24,7 +22,7 @@ ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
     cat("\t",(1-alpha)*100, "% Confidence Interval= ",round(m-dist,4)," to ", round(m+dist,4),"\n\n", sep="")
     ci<-c(m-dist, m+dist)
 ##Canvas-container
-    .ss.prepCanvas(main,sub, palette)
+    .ss.prepCanvas(main,sub, ss.col)
 
 ##figures
     vp.figures<-viewport(name="figures",x=0, w=1, h=unit(8,"lines"),
@@ -36,7 +34,7 @@ ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
     pushViewport(vp.figures1)
     grid.roundrect(height=unit(7,"lines"), x=unit(1,"npc")-unit(0.5,"cm"),
                    width=unit(4.5,"cm"),
-                   gp=gpar(fill=palette[5], col=palette[2], lwd=2),
+                   gp=gpar(fill=ss.col[5], col=ss.col[2], lwd=2),
                    just=c("right","center"))
 
     grid.text("Mean:\nStdDev:\nn:\nMissing:",just="left",
@@ -50,7 +48,7 @@ ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
     pushViewport(vp.figures2)
     grid.roundrect(height=unit(7,"lines"), x=unit(0,"npc")+unit(0.5,"cm"),
                    width=unit(6,"cm"),
-                   gp=gpar(fill=palette[5], col=palette[2], lwd=2),
+                   gp=gpar(fill=ss.col[5], col=ss.col[2], lwd=2),
                    just=c("left","center"))
 
     grid.text(paste((1-alpha)*100,"% CI:\nP-Var:\n",
@@ -74,7 +72,7 @@ ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
     grid.rect()
     grid.roundrect(height=unit(6,"lines"),
                    width=0.9, y=unit(0.5,"npc")+unit(1,"lines"),
-                   gp=gpar(fill=palette[5], col=palette[2], lwd=2))
+                   gp=gpar(fill=ss.col[5], col=ss.col[2], lwd=2))
 
     grid.text("Shapiro-Wilks\nNormality Test\n",y=unit(0.5,"npc")+unit(2,"lines"),
               gp=gpar(fontface=c("bold")))
@@ -86,7 +84,7 @@ ss.ci<-function(x,sigma="", alpha=0.05, data="", xname="x",
     vp.hist<-viewport(name="hist",layout.pos.row=1,layout.pos.col=1)
     pushViewport(vp.hist)
     grid.rect()
-    myhist<-histogram(x,col=palette[1],
+    myhist<-histogram(x,col=ss.col[1],
                       main=paste("Histogram of",xname),
                       xlab=xname)
     print(myhist,newpage=FALSE)

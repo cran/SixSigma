@@ -1,6 +1,5 @@
 \name{ss.ceDiag}
 \alias{ss.ceDiag}
-\encoding{utf-8}
 \title{
 Cause and Effect Diagram
 }
@@ -9,7 +8,7 @@ Represents a Cause and Effect Diagram by cause group
 }
 \usage{
 ss.ceDiag(effect, causes.gr, causes,
-main = "Six Sigma Cause-and-effect Diagram", sub, palette = c("#666666",
+main = "Six Sigma Cause-and-effect Diagram", sub, ss.col = c("#666666",
 "#BBBBBB", "#CCCCCC", "#DDDDDD","#EEEEEE"))
 }
 \arguments{
@@ -29,27 +28,27 @@ Main title for the diagram
   \item{sub}{
 Subtitle for the diagram (recommended the Six Sigma project name)
 }
-  \item{palette}{
+  \item{ss.col}{
 A vector of colors for a personalized drawing. At least five colors,
   sorted by descendant intensity
 }
 }
 
 \value{
-A drawing of the causes and efect with "fishbone" shape
+A drawing of the causes and effect with "fish-bone" shape
 }
 \details{
-The default value for palette is c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD",
-  "#EEEEEE"), a grayscale style. You can pass any accepted color string.
+The default value for ss.col is c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD",
+  "#EEEEEE"), a grayscale style. You can pass any accepted colour string.
 }
 \references{
  \url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
 }
 \author{
-Lopez Cano, Emilio
+Emilio L\'opez
 }
 \note{
-The cause and effect diagram is knowed also as "Ishikawa diagram", and
+The cause and effect diagram is known also as "Ishikawa diagram", and
   has been widely used in Quality Management. It is one of the Seven
   Basic Tools of Quality.
 }
@@ -60,17 +59,16 @@ The cause and effect diagram is knowed also as "Ishikawa diagram", and
 \examples{
 #Data
 effect<-"Flight Time"
-causes.gr<-c("Operator", "Environment", "Tools", "Design", "Raw.Material",
-             "Measure.Tool", "test")
+causes.gr<-c("Operator", "Environment", "Tools", "Design", 
+  "Raw.Material","Measure.Tool")
 causes<-vector(mode="list", length=length(causes.gr))
-causes[1]<-list(c("operator #1", "operator #2", "operator #32"))
+causes[1]<-list(c("operator #1", "operator #2", "operator #3"))
 causes[2]<-list(c("height", "cleaning"))
-causes[3]<-list(c("scisors", "tape"))
+causes[3]<-list(c("scissors", "tape"))
 causes[4]<-list(c("rotor.length", "rotor.width2", "paperclip"))
 causes[5]<-list(c("thickness", "marks"))
-causes[6]<-list(c("callibrate", "model"))
-causes[7]<-list(c("testcause"))
+causes[6]<-list(c("calibrate", "model"))
 ss.ceDiag(effect, causes.gr, causes, sub="Paper Helicopter Project")
 }
-\keyword{ quality }
-\keyword{ sixsigma }
+\keyword{Cause-and-Effect}
+\keyword{Define}
