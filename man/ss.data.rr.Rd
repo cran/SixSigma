@@ -30,9 +30,12 @@ Data for Measure phase of the Six Sigma breakthrough strategy.
 Our own data experience
 }
 \references{
- Allen, T. T. (2010). Introduction to Engineering Statistics and Lean
+Allen, T. T. (2010). Introduction to Engineering Statistics and Lean
   Six Sigma - Statistical Quality Control and Design of Experiments and
   Systems (Second Edition ed.). London: Springer.\cr
+  
+Box, G. (1991). Teaching engineers experimental design with a paper helicopter. Report 76, Center for
+  Quality and Productivity Improvement. University of Wisconsin.
 }
 
 \examples{

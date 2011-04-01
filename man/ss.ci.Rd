@@ -9,9 +9,10 @@ or feature of the process), and prints the data, a histogram and the
 result of the Shapiro-Wilks normality test.
 }
 \usage{
-ss.ci(x, sigma = "", alpha = 0.05, data = "", xname = "x",
-main = "Confidence Interval for the mean", sub = "",
-palette = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
+ss.ci(x, sigma = "", alpha = 0.05, data = "", xname = "x", 
+  approx.z=TRUE, main = "Confidence Interval for the mean",
+  sub = "", ss.col = c("#666666", "#BBBBBB", "#CCCCCC", 
+                       "#DDDDDD", "#EEEEEE"))
 }
 
 \arguments{
@@ -30,13 +31,17 @@ The data frame containing the vector
   \item{xname}{
 The name of the variable to show in the graph
 }
+\item{approx.z}{
+If TRUE it uses z statistic instead of t when sigma is unknown and sample size 
+is greater than 30
+}
   \item{main}{
 The main title for the graph
 }
   \item{sub}{
 The subtitle for the graph (recommended: six sigma project name)
 }
-  \item{palette}{
+  \item{ss.col}{
 A vector with colors
 }
 }
@@ -61,7 +66,8 @@ Emilio Lopez Cano
 \examples{
 data(ss.data.rr)
 ss.ci(time1, data=ss.data.rr, alpha=0.05,
-sub="Paper Helicopter Project | First Flight Time Evaluation", xname="Time")
+sub="Paper Helicopter Project | First Flight Time Evaluation", 
+  xname="Time")
 }
 \keyword{Confidence Interval }
 \keyword{mean}

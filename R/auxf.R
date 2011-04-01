@@ -1,8 +1,8 @@
 .ss.prepCanvas<-function(main="Six Sigma graph", sub="My Six Sigma Project",
-                        palette=c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
+                        ss.col=c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
 #Plot
     grid.newpage()
-    grid.rect(gp=gpar(col=palette[2], lwd=2, fill=palette[5]))
+    grid.rect(gp=gpar(col=ss.col[2], lwd=2, fill=ss.col[5]))
     vp.canvas<-viewport(name="canvas",
                         width=unit(1,"npc")-unit(6,"mm"),
                         height=unit(1,"npc")-unit(6,"mm"),
@@ -21,7 +21,7 @@
 #Subtitle
     vp.subtitle<-viewport(layout.pos.col=1, layout.pos.row=3, name="subtitle")
     pushViewport(vp.subtitle)
-    grid.text ( sub, gp=gpar(col=palette[1]))
+    grid.text ( sub, gp=gpar(col=ss.col[1]))
     popViewport()
 
 #Container
@@ -36,9 +36,12 @@
     }
     data(ss.data.ccConstants)
     switch (const,
-            "d2"=subset(ss.data.ccConstants,rr.n==sample.size)$d2,
-            "d3"=subset(ss.data.ccConstants,rr.n==sample.size)$d3,
-            "c4"=subset(ss.data.ccConstants,rr.n==sample.size)$c4,
+            "d2"=subset(ss.data.ccConstants,ss.data.ccConstants$rr.n
+	                    ==sample.size)$d2,
+            "d3"=subset(ss.data.ccConstants,ss.data.ccConstants$rr.n
+	                    ==sample.size)$d3,
+            "c4"=subset(ss.data.ccConstants,ss.data.ccConstants$rr.n
+	                    ==sample.size)$c4,
             stop("Incorrect constant")
             )
 }
