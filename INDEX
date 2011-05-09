@@ -1,7 +1,12 @@
-SixSigma-package        Six Sigma Quality
+SixSigma-package        Six Sigma Tools for Quality and Process
+                        Improvement
+ss.ca.yield             Main calculations regarding The Voice of the
+                        Process in SixSigma: Yield, FTY, RTY, DPMO
 ss.ceDiag               Cause and Effect Diagram
 ss.ci                   Confidence Interval for the mean
 ss.data.ccConstants     d2 & d3 constants
 ss.data.rr              Gage R&R data
+ss.heli                 Creates a pdf file with the design of the Paper
+                        Helicopter
 ss.pMap                 Process Map
-ss.rr                   Gage R & R Analysis
+ss.rr                   Gage R & R (Measure System Assessment)
