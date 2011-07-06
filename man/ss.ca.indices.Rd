@@ -1,0 +1,73 @@
+\name{Capability Indices}
+\alias{ss.ca.cp}
+\alias{ss.ca.cpk}
+\alias{ss.ca.z}
+\title{
+Capability Indices
+}
+\description{
+Compute the Capability Indices of a process, Z (Sigma Score), \eqn{C_p} 
+and \eqn{C_{pk}}.
+}
+\usage{
+ss.ca.cp(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, ci = FALSE, alpha = 0.05)
+
+ss.ca.cpk(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, ci = FALSE, alpha = 0.05)
+
+ss.ca.z(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{x}{
+A vector with the data of the process performance
+}
+  \item{LSL}{
+Lower Specification Limit
+}
+  \item{USL}{
+Upper Specification Limit
+}
+  \item{LT}{
+Long Term data (TRUE/FALSE). Not used for the moment
+}
+  \item{f.na.rm}{
+Remove NA data (TRUE/FALSE)
+}
+  \item{ci}{
+If TRUE computes a Confidence Interval
+}
+  \item{alpha}{
+Type I error (\eqn{\alpha}) for the Confidence Interval 
+}
+}
+%\details{
+%%  ~~ If necessary, more details than the description above ~~
+%}
+\value{
+A numeric value for the index, or a vector with the limits 
+of the Confidence Interval
+}
+\references{
+Montgomery, DC (2005) \emph{Introduction to Statistical Quality Control}
+  (Fifth Edition). New York: Wiley&Sons
+}
+\author{
+Emilio Lopez
+}
+%\note{
+%%  ~~further notes~~
+%}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+\code{\link{ss.study.ca}}
+}
+\examples{
+ss.ca.cp(ss.data.ca$Volume,740, 760)
+ss.ca.cpk(ss.data.ca$Volume,740, 760)
+ss.ca.z(ss.data.ca$Volume,740,760)
+}
+\keyword{ Cp }
+\keyword{ Cpk }
+\keyword{ Capability Index }

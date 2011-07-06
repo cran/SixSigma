@@ -118,7 +118,7 @@ ss.rr<-function(var, part, appr,
                                    par.ylab.text=list(cex=0.8),
                                    par.main.text=list(cex=0.9)),
                  par.strip.text=list(cex=0.6),
-                 main=expression(bar(x)*" Chart by appraiser"),grid=TRUE,
+                 main=expression(bold(bar(x)*" Chart by appraiser")),grid=TRUE,
                  layout=c(n,1),
                  type="b",
                  panel=function(...){
