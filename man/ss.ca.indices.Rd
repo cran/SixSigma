@@ -10,9 +10,11 @@ Compute the Capability Indices of a process, Z (Sigma Score), \eqn{C_p}
 and \eqn{C_{pk}}.
 }
 \usage{
-ss.ca.cp(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, ci = FALSE, alpha = 0.05)
+ss.ca.cp(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, 
+	ci = FALSE, alpha = 0.05)
 
-ss.ca.cpk(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, ci = FALSE, alpha = 0.05)
+ss.ca.cpk(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, 
+	ci = FALSE, alpha = 0.05)
 
 ss.ca.z(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE)
 }

@@ -6,16 +6,17 @@ Process Map
 }
 \description{
 This function takes information about the process we want
-  to represent and draw the Map Process, with its X's, x's, Y's and y's}
+  to represent and draw the Map Process, with its X's, x's, Y's and y's in
+  each step of the process}
 \usage{
-ss.pMap(procs, inputs.overall, outputs.overall, input.output,
+ss.pMap(steps, inputs.overall, outputs.overall, input.output,
 x.parameters, y.features, main = "Six Sigma Process Map", sub, ss.col =
 c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
 }
 
 \arguments{
-  \item{procs}{
-A vector of character with the name of the 'n' processes
+  \item{steps}{
+A vector of characters with the name of the 'n' steps
 }
   \item{inputs.overall}{
 A vector of characters with the name of the overall inputs
@@ -24,15 +25,15 @@ A vector of characters with the name of the overall inputs
 A vector of characters with the name of the overall outputs
 }
   \item{input.output}{
-A vector of lists with the names of the inputs of the \eqn{i-{th}} process,
-  that will be the outputs of the \eqn{(i-1)-{th}} process
+A vector of lists with the names of the inputs of the \eqn{i-{th}} step,
+  that will be the outputs of the \eqn{(i-1)-{th}} step
 }
   \item{x.parameters}{
 A vector of lists with a list of the x parameters of the process. The
   parameter is a vector with two values: the name and the type (view details)
 }
 \item{y.features}{
-  A vector of lists with a list of the y features of the process. The
+  A vector of lists with a list of the y features of the step. The
   feature is a vector with two values: the name and the type (view details)
 }
   \item{main}{
@@ -72,17 +73,16 @@ The process map is the starting point for a Six Sigma Project, and it is
 \examples{
 inputs.overall<-c("operators", "tools", "raw material", "facilities")
 outputs.overall<-c("helicopter")
-procs<-c("INSPECTION", "ASSEMBLY", "TEST", "LABELING")
+steps<-c("INSPECTION", "ASSEMBLY", "TEST", "LABELING")
 #Inputs of process "i" are inputs of process "i+1"
-input.output<-vector(mode="list",length=length(procs))
+input.output<-vector(mode="list",length=length(steps))
 input.output[1]<-list(c("sheets", "..."))
 input.output[2]<-list(c("sheets"))
 input.output[3]<-list(c("helicopter"))
 input.output[4]<-list(c("helicopter"))
-input.output[[1]][2]
 
 #Parameters of each process
-x.parameters<-vector(mode="list",length=length(procs))
+x.parameters<-vector(mode="list",length=length(steps))
 x.parameters[1]<-list(c(list(c("width", "NC")),list(c("operator", "C")),
 list(c("Measure pattern", "P")), list(c("discard", "P"))))
 x.parameters[2]<-list(c(list(c("operator", "C")),list(c("cut", "P")),
@@ -94,14 +94,14 @@ x.parameters[4]<-list(c(list(c("operator", "C")),list(c("label", "P"))))
 x.parameters
 
 #Features of each process
-y.features<-vector(mode="list",length=length(procs))
+y.features<-vector(mode="list",length=length(steps))
 y.features[1]<-list(c(list(c("ok", "Cr"))))
 y.features[2]<-list(c(list(c("weight", "Cr"))))
 y.features[3]<-list(c(list(c("time", "Cr"))))
 y.features[4]<-list(c(list(c("label", "Cr"))))
 y.features
 
-ss.pMap(procs, inputs.overall, outputs.overall,
+ss.pMap(steps, inputs.overall, outputs.overall,
         input.output, x.parameters, y.features, 
         sub="Paper Helicopter Project")
 }

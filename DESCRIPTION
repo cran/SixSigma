@@ -1,11 +1,11 @@
 Package: SixSigma
 Type: Package
 Title: Six Sigma Tools for Quality and Process Improvement
-Version: 0.3.0
-Date: 2011-05-09
+Version: 0.4.0
+Date: 2011-09-20
 encoding: utf8
-Author: Emilio Lopez, Andres Redchuk, Javier M.Moguerza
-Maintainer: Emilio Lopez <elopez@proyectum.es>
+Author: Emilio Lopez-Cano, Andres Redchuk, Javier M.Moguerza
+Maintainer: Emilio Lopez-Cano <elopez@proyectum.es>
 Description: This package contains functions and utilities to perform
         Statistical Analysis for Six Sigma methodology. Through its
         outline DMAIC (Define, Measure, Analyze, Improve, Control), you
@@ -21,6 +21,6 @@ Depends: R(>= 2.11), lattice, grid, ggplot2, nortest
 Suggests: gdata
 LazyLoad: yes
 LazyData: yes
-Packaged: 2011-07-05 20:05:42 UTC; emilio
+Packaged: 2011-09-20 16:04:52 UTC; emilio
 Repository: CRAN
-Date/Publication: 2011-07-06 18:56:06
+Date/Publication: 2011-09-20 19:27:57

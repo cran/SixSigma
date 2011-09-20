@@ -127,11 +127,6 @@ hist <- qqp + geom_histogram(aes(y=..density..), fill="steelblue", stat="bin") +
 		annotate(geom="text",x=LSL, y=0.2, label="LSL",hjust=-0.1,size=5)+
 		annotate(geom="text",x=Target, y=0.4, label="Target",hjust=-0.1,size=5)+
 		annotate(geom="text",x=USL, y=0.2, label="USL",hjust=1.1,size=5)+
-#		geom_text(aes(label=c("LSL","Target", "USL"),
-#						x = as.POSIXct(my.limits),
-#						y = c(0.2,0.4,0.2),
-#						#vjust=rep("just",3),
-#						hjust=c(-0.1,-0.1,1.1))) +
 		xlab(NULL) + ylab(NULL) + 
 		opts(axis.text.y=theme_blank()) +
 		geom_vline(xintercept=c(LSL,USL),linetype=2,size=1) +
@@ -140,7 +135,7 @@ hist <- qqp + geom_histogram(aes(y=..density..), fill="steelblue", stat="bin") +
 		stat_function( 
 				fun = dnorm, 
 				args = with(ggdata, 
-						c(mean = mean(value), sd = sd(value))),
+						c(mean(value), sd(value))),
 				linetype=2, size=1
 		) 
 
