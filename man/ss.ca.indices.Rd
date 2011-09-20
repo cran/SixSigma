@@ -54,7 +54,7 @@ Montgomery, DC (2005) \emph{Introduction to Statistical Quality Control}
   (Fifth Edition). New York: Wiley&Sons
 }
 \author{
-Emilio Lopez
+Emilio L. Cano
 }
 %\note{
 %%  ~~further notes~~

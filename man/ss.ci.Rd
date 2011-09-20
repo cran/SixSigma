@@ -5,12 +5,13 @@ Confidence Interval for the mean
 }
 \description{
 Computes a confidence interval for the mean of the variable (parameter
-or feature of the process), and prints the data, a histogram and the
-result of the Shapiro-Wilks normality test.
+or feature of the process), and prints the data, a histogram with a density line,
+the result of the Shapiro-Wilks normality test and a quantile-quantile plot.
 }
 \usage{
-ss.ci(x, sigma = "", alpha = 0.05, data = "", xname = "x", 
-  approx.z=TRUE, main = "Confidence Interval for the mean",
+ss.ci(x, sigma2 = NA, alpha = 0.05, data = NA, xname = "x", 
+  approx.z = FALSE, main = "Confidence Interval for the Mean",
+  digits = 3,
   sub = "", ss.col = c("#666666", "#BBBBBB", "#CCCCCC", 
                        "#DDDDDD", "#EEEEEE"))
 }
@@ -19,7 +20,7 @@ ss.ci(x, sigma = "", alpha = 0.05, data = "", xname = "x",
   \item{x}{
 A numeric vector with the variable data
 }
-  \item{sigma}{
+  \item{sigma2}{
 The population variance, if known
 }
   \item{alpha}{
@@ -29,11 +30,15 @@ The eqn{\\alpha} error used to compute the \eqn{100*(1-\\alpha)\%} confidence in
 The data frame containing the vector
 }
   \item{xname}{
-The name of the variable to show in the graph
+The name of the variable to be shown in the graph
+}
+  \item{digits}{
+Significant digits for output
 }
 \item{approx.z}{
 If TRUE it uses z statistic instead of t when sigma is unknown and sample size 
-is greater than 30
+is greater than 30. The default is FALSE, change only if you want to compare with
+results obtained with the old-fashioned method mentioned in some books.
 }
   \item{main}{
 The main title for the graph
@@ -57,17 +62,19 @@ verify normality.
 }
 
 \author{
-Emilio Lopez Cano
+Emilio L. Cano
 }
-
+\note{
+Thanks to the kind comments and suggestions from the anonymous reviewer 
+of a tentative article.
+}
 \seealso{
   \code{\link{ss.data.rr}}
 }
 \examples{
-data(ss.data.rr)
-ss.ci(time1, data=ss.data.rr, alpha=0.05,
-sub="Paper Helicopter Project | First Flight Time Evaluation", 
-  xname="Time")
+ss.ci(len, data=ss.data.strings, alpha=0.05,
+sub="Guitar Strings Test | String Length", 
+  xname="Length")
 }
 \keyword{Confidence Interval }
 \keyword{mean}

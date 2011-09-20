@@ -37,7 +37,7 @@ Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's quality engineering handbook}
 Wiley
 }
 \author{
-Emilio Lopez-Cano
+Emilio L. Cano
 }
 
 \seealso{

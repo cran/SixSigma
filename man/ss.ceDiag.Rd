@@ -45,7 +45,7 @@ The default value for ss.col is c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD",
  \url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
 }
 \author{
-Emilio L\'opez
+Emilio L. Cano
 }
 \note{
 The cause and effect diagram is known also as "Ishikawa diagram", and

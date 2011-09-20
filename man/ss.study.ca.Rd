@@ -1,6 +1,5 @@
 \name{ss.study.ca}
 \alias{ss.study.ca}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Graphs and figures for a Capability Study
 }
@@ -11,10 +10,9 @@ Capability Indices.
 }
 \usage{
 ss.study.ca(xST, xLT = NA, LSL = NA, USL = NA, Target = NA, 
-alpha = 0.5, f.na.rm = TRUE, f.main = "Six Sigma Capability Analysis Study", 
+alpha = 0.05, f.na.rm = TRUE, f.main = "Six Sigma Capability Analysis Study", 
 f.sub = "")
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{xST}{
 Short Term process performance data 
@@ -55,21 +53,16 @@ Montgomery, DC (2005) \emph{Introduction to Statistical Quality Control}
   (Fifth Edition). New York: Wiley&Sons
 }
 \author{
-Emilio Lopez
+Emilio L. Cano
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{ss.ca.cp}}, ~~~
 }
 \examples{
-	ss.study.ca(ss.data.ca$Volume, rnorm(40,753,3), 
-		LSL=740, USL=760, T=750, alpha=0.5, 
- 			f.sub="Winery Project")
+	ss.study.ca(ss.data.ca$Volume, rnorm(40, 753, 3), 
+		LSL = 740, USL = 760, T = 750, alpha = 0.05, 
+ 			f.sub = "Winery Project")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

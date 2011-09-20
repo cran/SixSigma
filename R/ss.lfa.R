@@ -111,6 +111,13 @@ ss.lfa <- function(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0,
 
 
 ss.lf <- function(lfa.Y1, lfa.Delta, lfa.Y0, lfa.L0) {
+	if (lfa.Delta <= 0){
+		stop("The tolerance of the process must be greater than 0")
+	}
+	if (lfa.L0 <= 0){
+		warning("The Cost of poor quality at tolerance limit should be greater than 0")
+	}
 	lfa.k <- lfa.L0/lfa.Delta
 	return(lfa.k*(lfa.Y1-lfa.Y0)^2)
+	
 }

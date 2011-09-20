@@ -3,42 +3,61 @@
 # Author: Emilio Lopez
 ###############################################################################
 
-ss.ca.yield <- function(defects=0, rework=0, opportunities=1){
-	Yield <- (opportunities-sum(defects))/opportunities
-	FTY <- (opportunities-sum(defects)-sum(rework))/opportunities
-	RTY <- prod((opportunities-(defects+rework))/opportunities)
+ss.ca.yield <- function(defects = 0, rework = 0, opportunities = 1){
+	Yield <- (opportunities - sum(defects)) / opportunities
+	FTY <- (opportunities - sum(defects) - sum(rework)) / opportunities
+	RTY <- prod((opportunities - (defects + rework)) / opportunities)
 	DPU <- sum(defects)
-	DPMO <- (DPU/opportunities)*10^6 
-	ss.ca.yield <- (list(Yield=Yield, FTY=FTY, RTY=RTY, DPU=DPU, DPMO=DPMO))
+	DPMO <- (DPU / opportunities) * 10^6 
+	ss.ca.yield <- (list(Yield = Yield, FTY = FTY, 
+						RTY = RTY, DPU = DPU, DPMO = DPMO))
 	as.data.frame(ss.ca.yield)
 } 
 
-ss.ca.z<-function(x, LSL=NA, USL=NA, LT=FALSE, f.na.rm=TRUE){
-	zz.m<-mean(x,na.rm=f.na.rm)
-	zz.s<-sd(x,na.rm=f.na.rm)
-	zul<-(USL-zz.m)/zz.s
-	zll<-(zz.m-LSL)/zz.s
+ss.ca.z <- function(x, LSL = NA, USL = NA, 
+		LT = FALSE, f.na.rm = TRUE){
+	if (is.na(LSL) & is.na(USL)) {
+		stop ("No specification limits provided")
+	}
+	zz.m <- mean(x, na.rm = f.na.rm)
+	zz.s <- sd(x, na.rm = f.na.rm)
+	zul <- (USL - zz.m) / zz.s
+	zll <- (zz.m - LSL) / zz.s
 	
 	if (is.na(zul)){
-		z<-zll
+		z <- zll
 	}
 		else if (is.na(zll)){
-			z<-zul
+			z <- zul
 		}
 		else {
-			z<-min(zul,zll)
+			z <- min(zul, zll)
 		}
-		if (LT==FALSE){
-			z<-z-1.5
+		if (LT == FALSE){
+			z <- z - 1.5
 		} 
 		return(as.vector(z))	
 }
 
 
-ss.ca.cp<-function(x, LSL=NA, USL=NA, LT=FALSE, f.na.rm=TRUE, 
-		ci=FALSE, alpha=0.05){
-	cp<-(USL-LSL)/(6*sd(x,na.rm=f.na.rm))
-	if (ci==FALSE){
+ss.ca.cp <- function(x, LSL = NA, USL = NA, 
+		LT = FALSE, f.na.rm = TRUE, 
+		ci = FALSE, alpha = 0.05){
+	if (is.na(LSL) & is.na(USL)) {
+		stop("No specification limits provided")
+	}
+	if (!is.numeric(x)){
+		stop("Incorrect vector data")
+	}
+	cp.m <- mean(x, na.rm = f.na.rm)
+	cp.s <- sd(x, na.rm = f.na.rm)
+	cp.l <- (cp.m - LSL) / (3 * cp.s)
+	cp.u <- (USL - cp.m) / (3 * cp.s)
+	cp <- (USL - LSL) / (6 * cp.s)
+	if (is.na(cp)){
+		cp <- max(cp.l, cp.u, na.rm = TRUE)
+	}
+	if (ci == FALSE){
 		return(as.numeric(cp))
 	}
 	else{
@@ -51,15 +70,22 @@ ss.ca.cp<-function(x, LSL=NA, USL=NA, LT=FALSE, f.na.rm=TRUE,
 	}
 }
 
-ss.ca.cpk<-function(x, LSL=NA, USL=NA, LT=FALSE, f.na.rm=TRUE, 
-		ci=FALSE, alpha=0.05 ){
-	ss.n<-length(x[!is.na(x)])
-	cpk.m<-mean(x,na.rm=f.na.rm)
-	cpk.s<-sd(x,na.rm=f.na.rm)
-	cpk.ul<-(USL-cpk.m)/(3*cpk.s)
-	cpk.ll<-(cpk.m-LSL)/(3*cpk.s)
-	cpk<-min(cpk.ul,cpk.ll)
-	if (ci==FALSE){
+ss.ca.cpk <- function(x, LSL = NA, USL = NA, 
+		LT = FALSE, f.na.rm = TRUE, 
+		ci = FALSE, alpha = 0.05 ){
+	if (is.na(LSL) & is.na(USL)) {
+		stop("No specification limits provided")
+	}
+	if (!is.numeric(x)){
+		stop("Incorrect vector data")
+	}
+	ss.n <- length(x[!is.na(x)])
+	cpk.m <- mean(x, na.rm = f.na.rm)
+	cpk.s <- sd(x, na.rm = f.na.rm)
+	cpk.ul <- (USL - cpk.m) / (3 * cpk.s)
+	cpk.ll <- (cpk.m - LSL) / (3 * cpk.s)
+	cpk <- min(cpk.ul, cpk.ll, na.rm = TRUE)
+	if (ci == FALSE){
 		return(as.numeric(cpk))
 	}
 	else{
@@ -73,29 +99,38 @@ ss.ca.cpk<-function(x, LSL=NA, USL=NA, LT=FALSE, f.na.rm=TRUE,
 }	
 
 ###############################################################################
-ss.study.ca<-function (xST, xLT=NA, LSL=NA, USL=NA, Target=NA, alpha=0.5, 
-		f.na.rm=TRUE,
-		f.main="Six Sigma Capability Analysis Study", 
-		f.sub=""){
+ss.study.ca<-function (xST, xLT = NA, LSL = NA, USL = NA, 
+		Target = NA, alpha = 0.05, 
+		f.na.rm = TRUE,
+		f.main = "Six Sigma Capability Analysis Study", 
+		f.sub = ""){
+	if (is.na(Target)){
+		stop("Target is needed")
+	}
+	if (is.na(LSL) & is.na(USL)){
+		stop("No specification limits provided")
+	}
 	require(nortest)
 	#Facts
-	mST=mean(xST,na.rm=f.na.rm)
-	sST=sd(xST,na.rm=f.na.rm)
-	nST=length(xST[!is.na(xST)])
-	nLT=length(xLT[!is.na(xLT)])
-	zST=ss.ca.z(xST, LSL, USL)
-	cpST=ss.ca.cp(xST, LSL, USL)
-	cpiST=ss.ca.cp(xST, LSL, USL, ci=TRUE)
-	cpkST=ss.ca.cpk(xST, LSL, USL)
-	cpkiST=ss.ca.cp(xST, LSL, USL, ci=TRUE)
-	if (!is.na(xLT)){
-		mLT=mean(xLT,na.rm=f.na.rm)
-		sLT=sd(xLT,na.rm=f.na.rm)
-		cpLT=ss.ca.cp(xLT, LSL, USL, LT=TRUE)	
-		cpiLT=ss.ca.cp(xLT, LSL, USL, LT=TRUE, ci=TRUE)
-		cpkLT=ss.ca.cpk(xLT, LSL, USL, LT=TRUE)
-		cpkiLT=ss.ca.cp(xLT, LSL, USL, LT=TRUE, ci=TRUE)
-		zLT=ss.ca.z(xLT, LSL, USL, LT=TRUE)
+	mST = mean(xST, na.rm = f.na.rm)
+	sST = sd(xST, na.rm = f.na.rm)
+	nST = length(xST[!is.na(xST)])
+	nLT = length(xLT[!is.na(xLT)])
+	zST = ss.ca.z(xST, LSL, USL)
+	cpST = ss.ca.cp(xST, LSL, USL)
+	cpiST = ss.ca.cp(xST, LSL, USL, ci = TRUE, alpha = alpha)
+	cpkST = ss.ca.cpk(xST, LSL, USL)
+	cpkiST = ss.ca.cpk(xST, LSL, USL, ci = TRUE, alpha = alpha)
+	DPMO <- (1 - pnorm(zST - 1.5)) * 10^6
+	if (is.numeric(xLT)){
+		mLT = mean(xLT, na.rm = f.na.rm)
+		sLT = sd(xLT,na.rm = f.na.rm)
+		cpLT = ss.ca.cp(xLT, LSL, USL, LT = TRUE)	
+		cpiLT = ss.ca.cp(xLT, LSL, USL, LT = TRUE, ci = TRUE, alpha = alpha)
+		cpkLT = ss.ca.cpk(xLT, LSL, USL, LT = TRUE)
+		cpkiLT = ss.ca.cpk(xLT, LSL, USL, LT = TRUE, ci = TRUE, alpha = alpha)
+		zLT = ss.ca.z(xLT, LSL, USL, LT = TRUE)
+		DPMO <- (1 - pnorm(zLT)) * 10^6
 	}
 	else{
 		mLT=NA
@@ -114,35 +149,79 @@ ss.study.ca<-function (xST, xLT=NA, LSL=NA, USL=NA, Target=NA, alpha=0.5,
 			layout=grid.layout(2,2,c(0.6,0.4),c(0.6,0.4)))
 	pushViewport(vp.plots)
 
-	vp.hist<-viewport(name="hist", layout.pos.row=1, layout.pos.col=1)
+	vp.hist <- viewport(name="hist", layout.pos.row=1, layout.pos.col=1)
 	pushViewport(vp.hist)
 #grid.rect()##########
 	grid.text("Histogram & Density", y=1, just=c("center", "top") )
 
 ##############	
 
+binwST <- diff(range(xST))/ sqrt(nST)
 ggdata <- melt(xST)
 qqp <- ggplot(ggdata, aes(x=value))
-hist <- qqp + geom_histogram(aes(y=..density..), fill="steelblue", stat="bin") + 
-		annotate(geom="text",x=LSL, y=0.2, label="LSL",hjust=-0.1,size=5)+
-		annotate(geom="text",x=Target, y=0.4, label="Target",hjust=-0.1,size=5)+
-		annotate(geom="text",x=USL, y=0.2, label="USL",hjust=1.1,size=5)+
-		xlab(NULL) + ylab(NULL) + 
-		opts(axis.text.y=theme_blank()) +
-		geom_vline(xintercept=c(LSL,USL),linetype=2,size=1) +
-		geom_vline(xintercept=Target,linetype=3, size=1)+
-		geom_density(size=1) +
+hist <- qqp + geom_histogram(aes(y = ..density..), 
+				binwidth = binwST,
+				fill = "steelblue", 
+				stat = "bin")
+if (!is.na(LSL)){
+	hist <- hist +
+		annotate(geom = "text", 
+				x = LSL, 
+				y = 0.2, 
+				label = "LSL", 
+				hjust = -0.1, 
+				size = 5) 
+} 
+hist <- hist +	annotate(geom = "text",
+				x = Target, 
+				y = 0.4, 
+				label = "Target",
+				hjust = -0.1,
+				size = 5)
+if (!is.na(USL)){
+	hist <- hist + 
+		annotate(geom = "text",
+				x = USL, 
+				y = 0.2, 
+				label = "USL",
+				hjust = 1.1, 
+				size = 5) 
+}
+	hist <- hist + xlab(NULL) + 
+		ylab(NULL) + 
+		opts(axis.text.y = theme_blank())
+if (!is.na(LSL)){
+		hist <- hist + geom_vline(xintercept = LSL,
+				linetype = 2,
+				size = 1) 
+	}
+if (!is.na(USL)){
+	hist <- hist + geom_vline(xintercept = USL,
+			linetype = 2,
+			size = 1) 
+}
+	hist <- hist + geom_vline(xintercept = Target,
+				linetype = 3, 
+				size = 1) +
+		stat_density(geom="path", 
+				position="identity", 
+				binwidth = binwST,
+				size = 1) +
 		stat_function( 
 				fun = dnorm, 
-				args = with(ggdata, 
-						c(mean(value), sd(value))),
-				linetype=2, size=1
+				args = with(ggdata,	c(mean(value), sd(value))),
+				linetype = 2, 
+				size = 1
 		) 
 
-if (!is.na(xLT)){
+if (is.numeric(xLT)){
+	binwLT <- diff(range(xLT))/ sqrt(nLT)
 	ggdataLT <- melt(xLT)
 	hist <- hist + 
-		geom_density(data=ggdataLT, aes(value))+
+		stat_density(geom="path",
+				data = ggdataLT, 
+				position = "identity", 
+				binwidth = binwLT) + 
 		stat_function(
 				fun = dnorm, 
 				args = with(ggdataLT, 
@@ -173,6 +252,9 @@ if (!is.na(xLT)){
 	pushViewport(vp.testn)
 	ss.ts<-shapiro.test(xST)
 	ss.tl<-lillie.test(xST)
+	if (min(ss.ts$p.value, ss.tl$pvalue) < alpha){
+		warning("Normality test/s failed")
+	} 
 	grid.text("Shapiro-Wilk Test", y=.9,just=c("center","top"), 
 			gp=gpar(cex=.8))
 	grid.text(paste("p-value: ",format(ss.ts$p.value,digits=4)),
@@ -204,7 +286,7 @@ grid.rect(gp=gpar(col="#BBBBBB",lwd=2))##########
 	grid.text("Theoretical Dens. ST", x=0.35, y=0.55,just=c("left","center"), 
 			gp=gpar(cex=0.8))
 
-if (!is.na(xLT)){	
+if (is.numeric(xLT)){	
 	grid.lines(x=c(0.05,0.3), y=c(0.40,0.40), gp=gpar(lty=1, lwd=1))
 	grid.text("Density LT", x=0.35, y=0.40,just=c("left","center"), 
 			gp=gpar(cex=0.8))
@@ -306,7 +388,7 @@ if (!is.na(xLT)){
 	grid.text(expression(bold("DPMO: ")), y=unit(.95,"npc")-unit(5.5,"lines"), 
 			just=c("right","top"),
 			gp=gpar(cex=.8))
-	grid.text("", y=unit(.95,"npc")-unit(5.5,"lines"), 
+	grid.text(round(DPMO,1), y=unit(.95,"npc")-unit(5.5,"lines"), 
 			just=c("left","top"),
 			gp=gpar(cex=.8))
 	popViewport()
