@@ -16,7 +16,7 @@ ss.rr<-function(var, part, appr,
                         paste("   ", rownames(model)[2]),
                         paste("   ",rownames(model)[3]), "Part-To-Part",
                          "Total Variation")
-    colnames(varComp)<-c("VarComp","%Contrib","StdDev", "5,15*SD","%StudyVar")
+    colnames(varComp)<-c("VarComp","%Contrib","StdDev", "5.15*SD","%StudyVar")
     varComp[2,1]<-model[4,3]
     varComp[4,1]<-max(c((model[2,3]-model[3,3])/(a*n),0))
     varComp[5,1]<-max(c((model[3,3]-model[4,3])/n,0))
@@ -30,12 +30,12 @@ ss.rr<-function(var, part, appr,
     varComp[,4]<-varComp[,3]*5.15
     varComp[,5]<-round(100*(varComp[,4]/varComp[7,4]),2)
 
-    message(paste("\nGage R&R"))
+    cat(paste("\nGage R&R\n"))
     print(varComp[,1:2])
-    message("\n")
+    cat("\n")
     print(varComp[,3:5])
     ncat<-max(c(1,floor((varComp[6,3]/varComp[1,3])*1.41)))
-    message(paste("\nNumber of Distinct Categories=",ncat,"\n"))
+    cat(paste("\nNumber of Distinct Categories=",ncat,"\n"))
 
 ##graph
     .ss.prepCanvas(main, sub)
@@ -119,7 +119,7 @@ ss.rr<-function(var, part, appr,
                                    par.main.text=list(cex=0.9)),
                  par.strip.text=list(cex=0.6),
                  main=expression(bold(bar(x)*" Chart by appraiser")),grid=TRUE,
-                 layout=c(n,1),
+                 layout=c(b,1),
                  type="b",
                  panel=function(...){
                      panel.xyplot(...)
@@ -145,7 +145,7 @@ ss.rr<-function(var, part, appr,
                                    par.main.text=list(cex=0.9)),
                  par.strip.text=list(cex=0.6),
                  main="R Chart by appraiser",grid=TRUE,
-                 layout=c(n,1),
+                 layout=c(b,1),
                  type="b",
                  panel=function(...){
                      panel.xyplot(...)

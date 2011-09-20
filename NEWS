@@ -1,0 +1,8 @@
+Changes in Version 0.4.0
+  
+  o New function ss.lfa() for Loss Function Analysis
+  o New function ss.lf() to evaluate loss functions
+  o New dataset ss.data.bolts
+  o New dataset ss.data.pastries
+  o Changes in function ss.study.ca for compatibility with last version of ggplot2
+  

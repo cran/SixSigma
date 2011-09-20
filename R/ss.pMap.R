@@ -1,9 +1,9 @@
 ss.pMap <-
-function(procs, inputs.overall, outputs.overall,
+function(steps, inputs.overall, outputs.overall,
                   input.output, x.parameters, y.features,
 		  main="Six Sigma Process Map", sub,
 		  ss.col=c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
-	nprocs<-length(procs)
+	nsteps<-length(steps)
 	.ss.prepCanvas(main,sub)
 	paintBox<-function(){
 		x<-c(rep(0.10,4),0.30,0.70,rep(0.90,4),0.7,0.3)
@@ -40,7 +40,7 @@ function(procs, inputs.overall, outputs.overall,
 
 #ProcessMap container
 	vp.map<-viewport(name="map",layout.pos.col=1:3, layout.pos.row=2,
-		layout=grid.layout(3,nprocs, heights=c(0.2,0.6,0.2)))	##
+		layout=grid.layout(3,nsteps, heights=c(0.2,0.6,0.2)))	##
 	pushViewport(vp.map)
 
 #overall inputs
@@ -50,7 +50,7 @@ function(procs, inputs.overall, outputs.overall,
 	grid.text("INPUTS\nX")
 	grid.move.to(x=0.5, y=0.1)
 	upViewport()
-	vp.inputsText<-viewport(layout.pos.col=2:4, layout.pos.row=1, name="inputst")
+	vp.inputsText<-viewport(layout.pos.col=2:nsteps, layout.pos.row=1, name="inputst")
 	pushViewport(vp.inputsText)
 	for (i in 1:length(inputs.overall)){
 		grid.text(x=unit(0.5,"cm"),
@@ -61,13 +61,13 @@ function(procs, inputs.overall, outputs.overall,
 	upViewport()
 
 #Processes
-	for (i in 1:nprocs){
+	for (i in 1:nsteps){
 		vp.proc<-viewport(layout.pos.col=i, layout.pos.row=2)
 		pushViewport(vp.proc)
 		pushViewport(viewport(y=1, h=0.5, just=c("center","top")))
 		paintBox()
 		grid.lines(x=c(0.1,0.9), y=c(0.74, 0.74), gp=gpar(lwd=3, col=ss.col[2]))
-		grid.text(procs[i], y=0.85, just=c("center", "top"))
+		grid.text(steps[i], y=0.85, just=c("center", "top"))
 		grid.text("INPUTS", rot=90, x=0.20, y=0.20,
 			just=c("left", "bottom"), gp=gpar(fontsize=8, col=ss.col[1]))
 		for (j in 1:length(input.output[[i]])){
@@ -85,7 +85,7 @@ function(procs, inputs.overall, outputs.overall,
 			ends = "last", type = "open"), gp=gpar(lwd=6, col=ss.col[1]))
 		}
 		grid.move.to(x=0.9, y=0.5)
-		if (i==nprocs){
+		if (i==nsteps){
 			grid.move.to(x=0.7, y=0.1)
 		}
 		upViewport()
@@ -116,14 +116,14 @@ function(procs, inputs.overall, outputs.overall,
 	}
 
 #overalloutputs
-	vp.outputs<-viewport(layout.pos.col=nprocs, layout.pos.row=3, name="outputs")
+	vp.outputs<-viewport(layout.pos.col=nsteps, layout.pos.row=3, name="outputs")
 	pushViewport(vp.outputs)
 	paintBox()
 	grid.text("OUTPUTS\nY")
 	grid.line.to(x=0.7, y=0.91, arrow=arrow(angle = 30, length = unit(0.15, "inches"),
 		ends = "last", type = "open"), gp=gpar(lwd=6, col=ss.col[1]))
 	upViewport()
-	vp.outputsText<-viewport(layout.pos.col=1:3, layout.pos.row=3, name="outputst")
+	vp.outputsText<-viewport(layout.pos.col=1:(nsteps-1), layout.pos.row=3, name="outputst")
 	pushViewport(vp.outputsText)
 	for (i in 1:length(outputs.overall)){
 		grid.text(x=unit(1,"npc")-unit(0.5,"cm"),
