@@ -56,7 +56,7 @@ Montgomery, D. C. (2005). Introduction to Statistical Quality Control
 Allen, T. T. (2010). Introduction to Engineering Statistics and Lean Six Sigma - Statistical Quality Control and Design of Experiments and Systems (Second Edition ed.). London: Springer.
 }
 \author{
-Emilio Lopez
+Emilio L. Cano
 }
 
 \seealso{

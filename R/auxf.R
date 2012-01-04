@@ -29,19 +29,4 @@
     pushViewport(vp.container)
 }
 
-#Getting constans for Control Charts
-.ss.cc.getConst<-function(sample.size,const="stop('Constant' requiered"){
-    if (sample.size>25){
-        stop("Not developed yet for sample sizes greater than 25")
-    }
-    data(ss.data.ccConstants)
-    switch (const,
-            "d2"=subset(ss.data.ccConstants,ss.data.ccConstants$rr.n
-	                    ==sample.size)$d2,
-            "d3"=subset(ss.data.ccConstants,ss.data.ccConstants$rr.n
-	                    ==sample.size)$d3,
-            "c4"=subset(ss.data.ccConstants,ss.data.ccConstants$rr.n
-	                    ==sample.size)$c4,
-            stop("Incorrect constant")
-            )
-}
+

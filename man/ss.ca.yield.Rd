@@ -36,7 +36,7 @@ Gygi C, DeCarlo N, Williams B (2005) {Six sigma for dummies}. --For dummies,
   Wiley Pub.
 }
 \author{
-Emilio Lopez
+Emilio L. Cano
 }
 %%\note{
 %%  ~~further notes~~

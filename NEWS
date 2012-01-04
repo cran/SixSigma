@@ -1,8 +1,15 @@
-Changes in Version 0.4.0
+Changes in Version 0.5.0
   
-  o New function ss.lfa() for Loss Function Analysis
-  o New function ss.lf() to evaluate loss functions
-  o New dataset ss.data.bolts
-  o New dataset ss.data.pastries
-  o Changes in function ss.study.ca for compatibility with last version of ggplot2
+  o Improvements to ss.ci function: density line, normal qq-plot, warnings when
+  normality test fails
+  o Improvements to capability analysis functions (ss.stuty.ca, ss.cp, ss.cpk), 
+  warnings and bug corrections
+  o New function ss.cc.getc4 to compute constant c4 for the unbiased estimator of the 
+  standard deviation.
+  o New functions ss.cc.getd2 and ss.cc.getd3 to compute mean and variance of
+  the relative range distribution (R/sigma)
+  o New dataframes ss.data.pc, ss.data.pc.big and ss.data.pc.r
+  o New dataframe ss.data.strings
+  o Now ss.rr function uses the new functions ss.cc.getd2 and ss.cc.getd3 to
+  calculate control limits.
   

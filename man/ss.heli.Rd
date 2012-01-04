@@ -22,7 +22,7 @@ Teaching engineers experimental design with a paper helicopter.
 \emph{Quality Engineering}, 4(3):453--459, 1992.
 }
 \author{
-Emilio Lopez
+Emilio L. Cano
 }
 \note{
 See the vignette("HelicopterInstructions") to see assembling instructions.

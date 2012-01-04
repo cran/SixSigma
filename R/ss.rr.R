@@ -125,9 +125,9 @@ ss.rr<-function(var, part, appr,
                      panel.xyplot(...)
                      panel.abline(h=mean(var,na.rm=TRUE), lty=2)
                      panel.abline(h=mean(var,na.rm=TRUE)+
-                                  (3/(.ss.cc.getConst(n,"d2")*sqrt(n)))*ar)
+                                  (3/(ss.cc.getd2(n)*sqrt(n)))*ar)
                      panel.abline(h=mean(var,na.rm=TRUE)-
-                                  (3/(.ss.cc.getConst(n,"d2")*sqrt(n)))*ar)
+                                  (3/(ss.cc.getd2(n)*sqrt(n)))*ar)
 
                  }
                  )
@@ -148,12 +148,14 @@ ss.rr<-function(var, part, appr,
                  layout=c(b,1),
                  type="b",
                  panel=function(...){
+					 this.d3 <- ss.cc.getd3(n)
+					 this.d2 <- ss.cc.getd2(n)
                      panel.xyplot(...)
                      panel.abline(h=ar, lty=2)
                      panel.abline(h=ar*(1+
-                                  (.ss.cc.getConst(n,"d3")/(.ss.cc.getConst(n,"d2")))))
+                                  (this.d3/(this.d2))))
                      panel.abline(h=ar*(1-
-                                  (.ss.cc.getConst(n,"d3")/(.ss.cc.getConst(n,"d2")))))
+                                  (this.d3/(this.d2))))
 
                  }
                  )

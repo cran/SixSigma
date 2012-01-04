@@ -60,7 +60,7 @@ A graphic representation of the Map Process.
   \url{http://en.wikipedia.org/wiki/Business_Process_Mapping}
 }
 \author{
-Emilio Lopez
+Emilio L. Cano
 }
 \note{
 The process map is the starting point for a Six Sigma Project, and it is
@@ -105,6 +105,5 @@ ss.pMap(steps, inputs.overall, outputs.overall,
         input.output, x.parameters, y.features, 
         sub="Paper Helicopter Project")
 }
-\keyword{ Ishikawa }
-\keyword{ cause-and-effect }
+\keyword{ process map}
 \keyword{ Define }
