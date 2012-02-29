@@ -34,22 +34,25 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
     .ss.prepCanvas(main,sub, ss.col)
 
 ##figures
-    vp.figures <- viewport(name = "figures", x = 0, w = 1, h = unit(8, "lines"),
-                         y = 1, just = c("left", "top"),
-                         layout = grid.layout(1, 2, widths = c(0.4, 0.6))						 )
+    vp.figures <- viewport(name = "figures", 
+			x = 0, 
+			width = 1, 
+			height = unit(8, "lines"),
+			y = 1, 
+			just = c("left", "top"),
+			layout = grid.layout(1, 2, widths = c(0.4, 0.6))						 )
     pushViewport(vp.figures)
 
-    vp.figures1 <- viewport(name = "figures1", layout.pos.col = 1, 
+    vp.figures1 <- viewport(name = "figures1", 
+			layout.pos.col = 1, 
 			layout.pos.row = 1)
     pushViewport(vp.figures1)
     grid.roundrect(height = unit(7, "lines"), 
-			#x = unit(1, "npc") - unit(0.5, "cm"),
-                   width = 0.95,
-                   gp = gpar(fill = ss.col[5], col = ss.col[2], lwd=2))
-                   #just = c("right", "center"))
+       width = 0.95,
+       gp = gpar(fill = ss.col[5], col = ss.col[2], lwd=2))
     grid.text("Mean:\nStdDev:\nn:\nMissing:", just = "left",
-              x = unit(1, "npc") - unit(5.5, "cm"), 
-			  gp = gpar(fontface = c("bold")))
+		x = unit(1, "npc") - unit(5.5, "cm"), 
+		gp = gpar(fontface = c("bold")))
     grid.text(paste(round(m, digits), "\n", round(s, digits), "\n", n,
 					"\n", na, sep = ""), just = "right", 
 			x = unit(1, "npc") - unit(1, "cm"))
@@ -60,10 +63,8 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
 			layout.pos.row = 1)
     pushViewport(vp.figures2)
     grid.roundrect(height = unit(7, "lines"), 
-			#x = unit(0, "npc") + unit(0.5, "cm"),
             width = 0.95,
             gp = gpar(fill = ss.col[5], col = ss.col[2], lwd = 2))
-#            just = c("left", "center"))
 
     grid.text(paste((1-alpha)*100, "% CI:\nP-Var:\n",
                     st.dist, ":", sep = ""),
@@ -79,11 +80,13 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
     popViewport()
 
 #graph
-    vp.graph <- viewport(name = "graph", y = 0, width = 0.95,
-                       h = unit(1, "npc") - unit(8, "lines"),
-                       just = c("center", "bottom"),
-                       layout = grid.layout(1, 2, 
-							   widths = unit(c(1, 6), c("null", "cm"))))
+    vp.graph <- viewport(name = "graph", 
+			y = 0, 
+			width = 0.95,
+            height = unit(1, "npc") - unit(8, "lines"),
+            just = c("center", "bottom"),
+			layout = grid.layout(1, 2, 
+				widths = unit(c(1, 6), c("null", "cm"))))
     pushViewport(vp.graph)
 	
     vp.test <- viewport(name = "test", layout.pos.row = 1, layout.pos.col = 2)
@@ -109,7 +112,7 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
 	
 	vp.qq <- viewport(name="qqp", 
 			x = 0.5, y=0.25,
-			  height=unit(0.6,"npc"))
+			  height = unit(0.6,"npc"))
 	pushViewport(vp.qq)
 	qqp <- qplot(sample = x, stat="qq") + 
 			  xlab(NULL) + ylab(NULL) +

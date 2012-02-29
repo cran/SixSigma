@@ -1,17 +1,22 @@
 Package: SixSigma
 Type: Package
 Title: Six Sigma Tools for Quality and Process Improvement
-Version: 0.5.0
-Date: 2011-09-20
+Version: 0.6.0
+Date: 2012-02-29
 encoding: utf8
-Author: Emilio L. Cano, Andres Redchuk, Javier M. Moguerza
+Author: Emilio L. Cano and Javier M. Moguerza and Andres Redchuk
 Maintainer: Emilio L. Cano <emilio.lopez@urjc.es>
-Description: This package contains functions and utilities to perform Statistical Analysis in the Six Sigma way. Through the DMAIC cycle (Define, Measure, Analyze, Improve, Control), you can manage several Quality Management studies: Gage R&R, Capability Analysis, Control Charts, Reliability, Regression and Design of Experiments. 
+Description: This package contains functions and utilities to perform
+        Statistical Analysis in the Six Sigma way. Through the DMAIC
+        cycle (Define, Measure, Analyze, Improve, Control), you can
+        manage several Quality Management studies: Gage R&R, Capability
+        Analysis, Control Charts, Reliability, Regression and Design of
+        Experiments.
 URL: http://rwiki.sciviews.org/doku.php?id=packages:cran:sixsigma
 License: GPL (>= 2)
-Depends: R(>= 2.11), lattice, grid, ggplot2, nortest
+Depends: R (>= 2.11), lattice, grid, ggplot2, nortest, reshape
 LazyLoad: yes
 LazyData: yes
-Packaged: 2012-01-04 17:31:08 UTC; emilio
+Packaged: 2012-03-01 10:35:09 UTC; emilio
 Repository: CRAN
-Date/Publication: 2012-01-04 18:12:49
+Date/Publication: 2012-03-01 10:52:15

@@ -107,8 +107,10 @@ ss.rr<-function(var, part, appr,
 
     #Control Charts
 
-    data.xrange<-aggregate(data=ss.data.rr,var~appr+part,function(x)max(x)-min(x))
-    ar<-mean(data.xrange$var)
+    data.xrange <- aggregate(data = ss.data.rr, 
+			var ~ appr + part,
+			function(x)max(x) - min(x))
+    ar <- mean(data.xrange$var)
     #Mean
     vp.ccMean<-viewport(name="ccMean",layout.pos.row=3, layout.pos.col=1)
     pushViewport(vp.ccMean)
