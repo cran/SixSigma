@@ -7,12 +7,9 @@ citHeader("To cite package 'SixSigma' in publications use:")
 
      citEntry(entry="Manual",
               title = "SixSigma: Six Sigma Tools for Quality Improvement",
-              author = personList(as.person("Emilio Lopez"),
-                                  as.person("Andres Redchuk"),
-                                  as.person("Javier M.Moguerza"),
-				  person("Rey Juan Carlos University (Madrid)")),
+              author = "Emilio L. Cano and Javier M. Moguerza and Andres Redchuk",
               year = year,
               note = vers,
               textVersion =
-              paste("Emilio Lopez, Andres Redchuk, Javier M.Moguerza, (",
-                    year,"). Rey Juan Carlos University. SixSigma: Six Sigma Tools for Quality and Process Improvement ", vers, ".", sep=""))
+              paste("Emilio L. Cano, Andres Redchuk, Javier M.Moguerza, (",
+                    year,"). SixSigma: Six Sigma Tools for Quality and Process Improvement ", vers, ".", sep=""))
