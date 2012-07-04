@@ -5,7 +5,7 @@
 Gage R&R data
 }
 \description{
-Data for Measure phase of the Six Sigma breakthrough strategy.
+Example data for Measure phase of the Six Sigma methodology.
 }
 \usage{data(ss.data.rr)}
 \format{
@@ -35,7 +35,12 @@ Allen, T. T. (2010). Introduction to Engineering Statistics and Lean
   Systems (Second Edition ed.). London: Springer.\cr
   
 Box, G. (1991). Teaching engineers experimental design with a paper helicopter. Report 76, Center for
-  Quality and Productivity Improvement. University of Wisconsin.
+  Quality and Productivity Improvement. University of Wisconsin.\cr
+
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 
 \examples{

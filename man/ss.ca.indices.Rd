@@ -50,8 +50,15 @@ A numeric value for the index, or a vector with the limits
 of the Confidence Interval
 }
 \references{
-Montgomery, DC (2005) \emph{Introduction to Statistical Quality Control}
-  (Fifth Edition). New York: Wiley&Sons
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+
+Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
+  (Sixth Edition). New York: Wiley&Sons\cr
+  	
+  
 }
 \author{
 Emilio L. Cano

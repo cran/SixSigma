@@ -4,7 +4,7 @@
 Graphs and figures for a Capability Study
 }
 \description{
-Plot a Histogram with density lines about the data of a process. Check normality
+Plots a Histogram with density lines about the data of a process. Check normality
 with qqplot and normality tests. Shows the Specification Limits and the 
 Capability Indices.
 }
@@ -49,8 +49,13 @@ Subtitle for the graphic output
 Figures and plot for Capability Analysis
 }
 \references{
-Montgomery, DC (2005) \emph{Introduction to Statistical Quality Control}
-  (Fifth Edition). New York: Wiley&Sons
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  
+Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
+  (Sixth Edition). New York: Wiley&Sons
 }
 \author{
 Emilio L. Cano

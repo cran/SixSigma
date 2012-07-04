@@ -61,6 +61,13 @@ verify normality.
   A graph with the figures, the Shapiro-Wilks test,  and a histogram.
 }
 
+\references{
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+}
+
 \author{
 Emilio L. Cano
 }
@@ -68,6 +75,7 @@ Emilio L. Cano
 Thanks to the kind comments and suggestions from the anonymous reviewer 
 of a tentative article.
 }
+
 \seealso{
   \code{\link{ss.data.rr}}
 }

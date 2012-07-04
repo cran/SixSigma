@@ -6,7 +6,7 @@ Process Map
 }
 \description{
 This function takes information about the process we want
-  to represent and draw the Map Process, with its X's, x's, Y's and y's in
+  to represent and draw the Process Map, with its X's, x's, Y's and y's in
   each step of the process}
 \usage{
 ss.pMap(steps, inputs.overall, outputs.overall, input.output,
@@ -57,7 +57,12 @@ You can pass any accepted color string.
 A graphic representation of the Map Process.
 }
 \references{
-  \url{http://en.wikipedia.org/wiki/Business_Process_Mapping}
+  \url{http://en.wikipedia.org/wiki/Business_Process_Mapping}\cr
+  
+  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \author{
 Emilio L. Cano

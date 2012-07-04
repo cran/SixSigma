@@ -1,3 +1,9 @@
+Changes in Version 0.6.1
+  o New dataset (ss.data.batteries)
+  o New and updated references in help files
+  o Now function ss.lfa (loss function analysis) allows smaller-the-best and
+    larger-the-best CTQs, besides nominal-the-best
+
 Changes in Version 0.6.0
 
   o New datasets (ss.data.doe1, ss.data.doe2, ss.data.pb1, ss.data.pb2, ss.data.pb3, ss.data.pb4)

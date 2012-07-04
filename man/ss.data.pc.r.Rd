@@ -2,10 +2,10 @@
 \alias{ss.data.pc.r}
 \docType{data}
 \title{
-Data set for the printer cartridges example, by regions
+Data set for the printer cartridge example, by region
 }
 \description{
-This data set contains data from a simulated process of printer cartridges filling. 
+This data set contains data from a simulated process of printer cartridge filling. 
 The dataframe contains defects by region of each type of cartridge.
 }
 \usage{data(ss.data.pc.r)}
@@ -22,6 +22,14 @@ The dataframe contains defects by region of each type of cartridge.
 \source{
 The data have been obtained by the authors by simulation.
 }
+
+\references{
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+}
+
 \examples{
 data(ss.data.pc.r)
 }

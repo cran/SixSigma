@@ -4,7 +4,7 @@
 Cause and Effect Diagram
 }
 \description{
-Represents a Cause and Effect Diagram by cause group
+Represents a Cause and Effect Diagram by cause group.
 }
 \usage{
 ss.ceDiag(effect, causes.gr, causes,
@@ -42,13 +42,18 @@ The default value for ss.col is c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD",
   "#EEEEEE"), a grayscale style. You can pass any accepted colour string.
 }
 \references{
- \url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+
+Wikipedia, \url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
 }
 \author{
 Emilio L. Cano
 }
 \note{
-The cause and effect diagram is known also as "Ishikawa diagram", and
+The cause and effect diagram is also known as "Ishikawa diagram", and
   has been widely used in Quality Management. It is one of the Seven
   Basic Tools of Quality.
 }
@@ -56,6 +61,8 @@ The cause and effect diagram is known also as "Ishikawa diagram", and
 \seealso{
 \code{\link{ss.pMap}}
 }
+
+
 \examples{
 #Data
 effect<-"Flight Time"

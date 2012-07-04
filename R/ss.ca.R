@@ -2,7 +2,7 @@
 # 
 # Author: Emilio Lopez
 ###############################################################################
-
+utils::globalVariables(c("..density..", "value"))
 ss.ca.yield <- function(defects = 0, rework = 0, opportunities = 1){
 	Yield <- (opportunities - sum(defects)) / opportunities
 	FTY <- (opportunities - sum(defects) - sum(rework)) / opportunities

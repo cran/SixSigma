@@ -25,13 +25,14 @@ E. L. Cano, J. M. Moguerza, and A. Redchuk,
  ISBN 978-1-4614-3651-5.
  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
 }
+
 \references{
-E. L. Cano, J. M. Moguerza, and A. Redchuk,
- \emph{Six Sigma with R. Statistical Engineering for Process
- Improvement}, volume 36 of \emph{Use R!}, Springer, New York, 2012.
- ISBN 978-1-4614-3651-5.
- \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
+
 \examples{
 data(ss.data.pb4)
 }
