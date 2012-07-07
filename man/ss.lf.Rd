@@ -34,7 +34,12 @@ The cost of poor quality when the characteristic is \eqn{Y_0 + \Delta}.
 
 \references{
 Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's quality engineering handbook}. John
-Wiley
+Wiley\cr
+
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \author{
 Emilio L. Cano

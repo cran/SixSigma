@@ -23,6 +23,14 @@ pastries from a bakery. There are two runs for each combination of two factors
 \source{
 Data from the authors of the package.
 }
+
+\references{
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+}
+
 \examples{
 data(ss.data.pastries)
 }

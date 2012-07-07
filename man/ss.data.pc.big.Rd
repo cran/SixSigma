@@ -23,6 +23,14 @@ complete replications.
 \source{
 The data have been obtained by the authors by simulation.
 }
+
+\references{
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+}
+
 \examples{
 str(ss.data.pc.big)
 head(ss.data.pc.big)

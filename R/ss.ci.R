@@ -1,3 +1,4 @@
+utils::globalVariables(c("..density.."))
 ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA, 
 		xname = "x", approx.z = FALSE, main = "Confidence Interval for the Mean", 
 		digits = 3,

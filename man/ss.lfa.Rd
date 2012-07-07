@@ -22,7 +22,7 @@ Name of the field in the data frame containing the data.
 Tolerance of the process.
 }
   \item{lfa.Y0}{
-Target of the process.
+Target of the process (see note).
 }
   \item{lfa.L0}{
 Cost of poor quality at tolerance limit.
@@ -51,10 +51,20 @@ Subtitle for the graphic output.
 }
 \references{
 Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's quality engineering handbook}. John
-Wiley
+Wiley\cr
+
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \author{
 Emilio L. Cano
+}
+
+\note{
+For smaller-the-better characteristics, the target should be zero (\code{lfa.Y0 = 0}). 
+For larger-the-better characteristics, the target should be infinity (\code{lfa.Y0 = Inf}).
 }
 
 \seealso{

@@ -19,7 +19,12 @@ No value is returned
 \references{
 George Box.
 Teaching engineers experimental design with a paper helicopter.
-\emph{Quality Engineering}, 4(3):453--459, 1992.
+\emph{Quality Engineering}, 4(3):453--459, 1992.\cr
+
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \author{
 Emilio L. Cano

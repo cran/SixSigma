@@ -20,9 +20,14 @@ The only field of the data is the volume measured in 20 bottles.
 \source{
 Package Authors
 }
-%\references{
-%%  Six Sigma with R
-%}
+
+\references{
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+}
+
 \examples{
 data(ss.data.ca)
 str(ss.data.ca)

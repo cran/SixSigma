@@ -31,10 +31,17 @@ The three arguments must have the same length.
   \item{RTY }{prod(FTY)}
   \item{DPMO}{Defects per Million Opportunities}
 }
+
 \references{
-Gygi C, DeCarlo N, Williams B (2005) {Six sigma for dummies}. --For dummies,
-  Wiley Pub.
+Gygi C, DeCarlo N, Williams B (2005) \emph{Six sigma for dummies}. --For dummies,
+  Wiley Pub.\cr
+  	
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
+
 \author{
 Emilio L. Cano
 }

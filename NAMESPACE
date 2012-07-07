@@ -2,7 +2,10 @@
 
 import(grid)
 import(lattice)
+import(ggplot2)
 
 #export functions
 exportPattern("^[^\\.]")
+
+
 

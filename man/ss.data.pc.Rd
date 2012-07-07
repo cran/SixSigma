@@ -2,7 +2,7 @@
 \alias{ss.data.pc}
 \docType{data}
 \title{
-Data set for the printer cartridges example
+Data set for the printer cartridge example
 }
 \description{
 This data set contains data from a simulated process of printer cartridges filling.
@@ -23,6 +23,13 @@ This data set contains data from a simulated process of printer cartridges filli
 
 \source{
 The data have been obtained by the authors by simulation.
+}
+
+\references{
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+\emph{Six Sigma with {R}. Statistical Engineering for Process
+  Improvement}, Use R!, vol. 36. Springer, New York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 
 \examples{
