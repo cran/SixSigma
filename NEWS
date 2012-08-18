@@ -1,28 +1,34 @@
-Changes in Version 0.6.1
-  o New dataset (ss.data.batteries)
-  o New and updated references in help files
-  o Now function ss.lfa (loss function analysis) allows smaller-the-best and
-    larger-the-best CTQs, besides nominal-the-best
+SixSigma 0.6.2
+-------------
+* Bug fixed in ss.lfa function (thanks to Sanjay Shinde for reporting)
+* ggplot2 0.9.2 compatibility update
+* NEWS file format fixed
+* Code tests implemented (ss.lfa)
 
-Changes in Version 0.6.0
+SixSigma 0.6.1
+-------------
+* New dataset (ss.data.batteries)
+* New and updated references in help files
+* Now function ss.lfa (loss function analysis) allows smaller-the-better and
+  larger-the-better CTQs, besides nominal-the-best
 
-  o New datasets (ss.data.doe1, ss.data.doe2, ss.data.pb1, ss.data.pb2, ss.data.pb3, ss.data.pb4)
-  for running examples in book "Six Sigma with R".
-  o Minor modifications for ggplot2 0.9.0 compatibility 
+SixSigma 0.6.0
+-------------
+* New datasets (ss.data.doe1, ss.data.doe2, ss.data.pb1, ss.data.pb2, 
+  ss.data.pb3, ss.data.pb4) for running examples in book "Six Sigma with R".
+* Minor modifications for ggplot2 0.9.0 compatibility 
 
-
-Changes in Version 0.5.0
-  
-  o Improvements to ss.ci function: density line, normal qq-plot, warnings when
+SixSigma 0.5.0
+------------- 
+* Improvements to ss.ci function: density line, normal qq-plot, warnings when
   normality test fails
-  o Improvements to capability analysis functions (ss.stuty.ca, ss.cp, ss.cpk), 
+* Improvements to capability analysis functions (ss.stuty.ca, ss.cp, ss.cpk), 
   warnings and bug corrections
-  o New function ss.cc.getc4 to compute constant c4 for the unbiased estimator of the 
+* New function ss.cc.getc4 to compute constant c4 for the unbiased estimator of the 
   standard deviation.
-  o New functions ss.cc.getd2 and ss.cc.getd3 to compute mean and variance of
+* New functions ss.cc.getd2 and ss.cc.getd3 to compute mean and variance of
   the relative range distribution (R/sigma)
-  o New dataframes ss.data.pc, ss.data.pc.big and ss.data.pc.r
-  o New dataframe ss.data.strings
-  o Now ss.rr function uses the new functions ss.cc.getd2 and ss.cc.getd3 to
+* New dataframes ss.data.pc, ss.data.pc.big and ss.data.pc.r
+* New dataframe ss.data.strings
+* Now ss.rr function uses the new functions ss.cc.getd2 and ss.cc.getd3 to
   calculate control limits.
-  
