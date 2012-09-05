@@ -28,7 +28,7 @@ without adjusting to the paper size to get the correct dimensions.
 You can also generate a copy of the pdf document in your working directory
 with the function \texttt{ss.heli()}:
 
-<<results=hide>>=
+<<results=hide, eval=FALSE>>=
 	library(SixSigma)
 	ss.heli()
 @

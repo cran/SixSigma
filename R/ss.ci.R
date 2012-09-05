@@ -117,9 +117,10 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
 	pushViewport(vp.qq)
 	qqp <- qplot(sample = x, stat="qq") + 
 			  xlab(NULL) + ylab(NULL) +
-			  opts(axis.text.x = theme_blank(),
-					  axis.text.y = theme_blank(),
-					  title = "Normal q-q Plot") 
+			  theme(axis.text.x = element_blank(),
+					  axis.text.y = element_blank()) +
+                    ggtitle("Normal q-q Plot")
+              
 	print(qqp,newpage=FALSE)  
 	popViewport()
     popViewport()
@@ -140,7 +141,7 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
 					col = "gray",
 					stat = "bin") +
 			xlab(paste("Value of", deparse(substitute(x)))) +
-			opts(title = "Histogram & Density Plot") +
+			ggtitle("Histogram & Density Plot") +
 			stat_density(geom="path", position="identity", 
 					binwidth = binw,
 					size = 1) 
