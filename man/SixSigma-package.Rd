@@ -12,11 +12,11 @@
   \tabular{ll}{
     Package: \tab SixSigma\cr
     Type: \tab Package\cr
-    Version: \tab 0.6.1\cr
-    Date: \tab 2012-04-07\cr
+    Version: \tab 0.6.3\cr
+    Date: \tab 2012-09-05\cr
     URL: \tab \url{http://rwiki.sciviews.org/doku.php?id=packages:cran:sixsigma}\cr
     License: \tab GPL>=2\cr
-    Depends: \tab R(>=2.12), lattice, grid\cr
+    Depends: \tab R(>=2.12), lattice, grid, ggplot2, nortest, reshape2, plyr, testthat\cr
     LazyLoad: \tab yes\cr
     LazyData: \tab yes\cr
   }
@@ -70,10 +70,7 @@ Chambers, J. M. (2008) \emph{Software for data analysis. Programming with
 Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
   (Sixth Edition). New York: Wiley&Sons\cr
   
-Rey Juan Carlos University, Master in Decision Systems Engineering,
 
-  \url{http://www.masteringenieriasistemasdecision.com}/\cr
-  
 Wikipedia, \url{http://en.wikipedia.org/wiki/Six_Sigma}
 }
 \seealso{

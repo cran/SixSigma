@@ -189,7 +189,7 @@ if (!is.na(USL)){
 }
 	hist <- hist + xlab(NULL) + 
 		ylab(NULL) + 
-		opts(axis.text.y = theme_blank())
+		theme(axis.text.y = element_blank())
 if (!is.na(LSL)){
 		hist <- hist + geom_vline(xintercept = LSL,
 				linetype = 2,
@@ -244,8 +244,9 @@ if (is.numeric(xLT)){
 #grid.rect()##########
 
 	qqp <- qplot(sample = xST, stat="qq") + 
-			xlab(NULL)+ ylab(NULL)+
-			opts(axis.text.x=theme_blank(),axis.text.y=theme_blank()) 
+			xlab(NULL) + ylab(NULL) +
+			theme(axis.text.x = element_blank(), 
+              axis.text.y = element_blank()) 
 	print(qqp,newpage=FALSE)
 	popViewport()
 	vp.testn<-viewport(name="testn",layout.pos.row=2, layout.pos.col=2)

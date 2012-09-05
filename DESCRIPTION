@@ -1,9 +1,9 @@
 Package: SixSigma
 Type: Package
 Title: Six Sigma Tools for Quality and Process Improvement
-Version: 0.6.2
-Date: 2012-08-18
-encoding: utf8
+Version: 0.6.3
+Date: 2012-09-05
+encoding: UTF-8
 Author: Emilio L. Cano and Javier M. Moguerza and Andres Redchuk
 Maintainer: Emilio L. Cano <emilio.lopez@urjc.es>
 Description: This package contains functions and utilities to perform
@@ -20,6 +20,6 @@ Depends: R (>= 2.15.1), lattice, grid, ggplot2, nortest, reshape2,
 Imports: ggplot2, reshape2
 LazyLoad: yes
 LazyData: yes
-Packaged: 2012-08-18 16:24:22 UTC; emilio
+Packaged: 2012-09-05 08:57:00 UTC; emilio
 Repository: CRAN
-Date/Publication: 2012-08-18 17:38:48
+Date/Publication: 2012-09-05 09:40:26
