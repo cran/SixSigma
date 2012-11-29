@@ -1,9 +1,54 @@
-# Loss Function Analysis
-# 
-# Author: Emilio
-###############################################################################
+# Allow compatibility with previous R versions
+if(getRversion() >= '2.15.1') utils::globalVariables(c("..density..", "value"))
 
-utils::globalVariables(c("..density..", "value"))
+#' Loss Function Analysis
+#' 
+#' This function performs a Quality Loss Function Analysis, based in the Taguchi
+#' Loss Function for "Nominal-the-Best" characteristics. 
+#' 
+#' \code{lfa.output} can take the values "text", "plot" or "both".
+#' 
+#' @param lfa.data Data frame with the sample to get the average loss.
+#' @param lfa.ctq Name of the field in the data frame containing the data.
+#' @param lfa.Delta Tolerance of the process.
+#' @param lfa.Y0 Target of the process (see note).
+#' @param lfa.L0 Cost of poor quality at tolerance limit.
+#' @param lfa.size Size of the production, batch, etc. to calculate the total loss in a group 
+#' (span, batch, period, ...)
+#' @param lfa.output Type of output (see details).
+#' @param lfa.sub Subtitle for the graphic output.
+#' 
+#' @return
+#'    \item{lfa.k }{Constant k for the loss function}
+#'   \item{lfa,lf }{Expression with the loss function}
+#'   \item{lfa.MSD}{Mean Squared Differences from the target}
+#'   \item{lfa.avLoss}{Average Loss per unit of the process}
+#'   \item{lfa.Loss}{Total Loss of the process (if a size is provided)}
+#' 
+#' @references 
+#' Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's quality engineering handbook}. John
+#' Wiley\cr
+#' 
+#' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+#' \emph{Six Sigma with {R}. Statistical Engineering for Process
+#'   Improvement}, Use R!, vol. 36. Springer, New York.
+#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#' 
+#' @note 
+#' For smaller-the-better characteristics, the target should be zero (\code{lfa.Y0 = 0}). 
+#' For larger-the-better characteristics, the target should be infinity (\code{lfa.Y0 = Inf}).
+#' 
+#' @seealso 
+#' \code{\link{ss.lf}}, \code{\link{ss.data.bolts}}.
+#' 
+#' @author EL Cano
+#' 
+#' @examples
+#' ss.lfa(ss.data.bolts, "diameter", 0.5, 10, 0.001, 
+#' 		lfa.sub = "10 mm. Bolts Project", 
+#' 		lfa.size = 100000, lfa.output = "both")
+#' @export
+#' @keywords loss function Taguchi
 ss.lfa <- function(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0, 
   lfa.size = NA, lfa.output = "both", lfa.sub = "Six Sigma Project"){
   if (missing(lfa.Delta) || !is.numeric(lfa.Delta)){
@@ -186,9 +231,40 @@ ss.lfa <- function(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0,
   }
 }
 
-##################################
 
 
+#' Evaluates the Loss Function for a process.
+#' 
+#' The quality loss function is one of the tools of the Six Sigma methodology.
+#' The function assigns a cost to an observed value, that is larger as far as it
+#' is from the target. 
+#' 
+#' @param lfa.Y1 The observed value of the CTQ (critical to quality) characteristic
+#' that will be evaluated.
+#' @param lfa.Delta The tolerance for the CTQ.
+#' @param lfa.Y0 The target for the CTQ.
+#' @param lfa.L0 The cost of poor quality when the characteristic is \eqn{Y_0 + \Delta}.
+#' 
+#' @return
+#' \item{ss.lf}{A number with the evaluated function at \eqn{Y_1}} 
+#' 
+#' @references 
+#' Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's quality engineering handbook}. John
+#' Wiley
+#' 
+#' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+#' \emph{Six Sigma with {R}. Statistical Engineering for Process
+#'   Improvement}, Use R!, vol. 36. Springer, New York.
+#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#' 
+#' @seealso \code{\link{ss.lfa}}
+#' @author EL Cano
+#' 
+#' @examples 
+#' #Example bolts: evaluate LF at 10.5 if Target=10, Tolerance=0.5, L_0=0.001
+#' ss.lf(10.5, 0.5, 10, 0.001)
+#' @export
+#' @keywords loss function Taguchi
 ss.lf <- function(lfa.Y1, lfa.Delta, lfa.Y0, lfa.L0) {
   if (lfa.Delta <= 0){
     stop("The tolerance of the process must be greater than 0")

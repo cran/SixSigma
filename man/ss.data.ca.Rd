@@ -1,36 +1,38 @@
+\docType{data}
 \name{ss.data.ca}
 \alias{ss.data.ca}
-\docType{data}
-\title{
-Data for a filling process in a winery
-}
-\description{
-The only field of the data is the volume measured in 20 bottles.
-}
-\usage{data(ss.data.ca)}
-\format{
-  A data frame with 20 observations on the following variable.
+\title{Data for a filling process in a winery}
+\format{A data frame with 20 observations on the following variable.
   \describe{
     \item{\code{Volume}}{a numeric vector (volume in cl}
-  }
-}
-%\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-%}
+  }}
 \source{
-Package Authors
+  See references.
 }
-
-\references{
-Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
-\emph{Six Sigma with {R}. Statistical Engineering for Process
-  Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+\description{
+  The only field of the data is the volume measured in 20
+  bottles.
 }
-
+\note{
+  This data set is used in chapter 7 of the book ``Six
+  Sigma with R'' (see References).
+}
 \examples{
 data(ss.data.ca)
-str(ss.data.ca)
+summary(ss.data.ca)
+hist(ss.data.ca$Volume)
 }
+\references{
+  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
+  2012. \emph{Six Sigma with {R}. Statistical Engineering
+  for Process Improvement}, Use R!, vol. 36. Springer, New
+  York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+}
+\seealso{
+  \link{ss.study.ca}
+}
+\keyword{capability}
+\keyword{data}
 \keyword{datasets}
-\keyword{ Capability Analysis }
+

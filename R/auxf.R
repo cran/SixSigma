@@ -1,3 +1,11 @@
+#' Internal - Prepare canvas for charts
+#' 
+#' @param main  Main title 
+#' @param sub   Subtitle
+#' @param ss.col Vector with 5 colors
+#' 
+#' @author EL Cano
+
 .ss.prepCanvas<-function(main="Six Sigma graph", sub="My Six Sigma Project",
                         ss.col=c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
 #Plot
