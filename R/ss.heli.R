@@ -1,8 +1,32 @@
-# Functions for the case study: paper helicopters
-# 
-# Author: Emilio Lopez
-###############################################################################
-
+#' Creates a pdf file with the design of the Paper Helicopter
+#' 
+#' The pdf file contains a template with lines and indications to build the 
+#' paper helicopter described in many SixSigma publications.
+#' 
+#' The pdf file must be printed in A4 paper, without adjusting size to paper.
+#' 
+#' @return 
+#' No value is returned. A pdf file is saved in the working directory
+#' 
+#' @references 
+#' George Box.
+#' Teaching engineers experimental design with a paper helicopter.
+#' \emph{Quality Engineering}, 4(3):453--459, 1992.
+#' 
+#' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+#' \emph{Six Sigma with {R}. Statistical Engineering for Process
+#'   Improvement}, Use R!, vol. 36. Springer, New York.
+#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#' 
+#' @note 
+#' See the \code{vignette("HelicopterInstructions")} to see assembling instructions.
+#' 
+#' @author EL Cano
+#' 
+#' @examples 
+#' ss.heli()
+#' vignette("HelicopterInstructions")
+#' @export
 ss.heli <- function(){
 	pdf(file="helicopter.pdf", width=6, height=10)
 	#dev.new(width=8, height=15)

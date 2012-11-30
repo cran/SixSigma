@@ -2,7 +2,38 @@
 # 
 # Author: Emilio Lopez
 ###############################################################################
-utils::globalVariables(c("..density..", "value"))
+if(getRversion() >= '2.15.1') utils::globalVariables(c("..density..", "value"))
+
+
+#' Main calculations regarding The Voice of the Process in SixSigma: Yield, FTY, RTY,
+#' DPMO
+#' 
+#' Computes the Yield, First Time Yield, Rolled Throughput Yield and Defects
+#' per Million Opportunities of a process.
+#' 
+#' The three arguments must have the same length.
+#' 
+#' @param defects A vector with the number of defects in each product/batch, ...
+#' @param rework A vector with the number of items/parts reworked
+#' @param opportunities A numeric value with the size or length of the product/batch
+#' @return 
+#'   \item{Yield }{Number of good stuff / Total items}
+#'   \item{FTY }{(Total - scrap - rework) / Total }
+#'   \item{RTY }{prod(FTY)}
+#'   \item{DPMO}{Defects per Million Opportunities}
+#' @references 
+#' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+#' \emph{Six Sigma with {R}. Statistical Engineering for Process
+#'   Improvement}, Use R!, vol. 36. Springer, New York.
+#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#' 
+#' Gygi C, DeCarlo N, Williams B (2005) \emph{Six sigma for dummies}. --For dummies,
+#'   Wiley Pub.
+#' @author Emilio L. Cano
+#' @export
+#' @examples 
+#' ss.ca.yield(c(3,5,12),c(1,2,4),1915)
+#' @keywords Yield RTY FTY DPMO
 ss.ca.yield <- function(defects = 0, rework = 0, opportunities = 1){
 	Yield <- (opportunities - sum(defects)) / opportunities
 	FTY <- (opportunities - sum(defects) - sum(rework)) / opportunities
@@ -14,6 +45,50 @@ ss.ca.yield <- function(defects = 0, rework = 0, opportunities = 1){
 	as.data.frame(ss.ca.yield)
 } 
 
+
+
+#' Capability Indices
+#' 
+#' Compute the Capability Indices of a process, Z (Sigma Score), \eqn{C_p} 
+#' and \eqn{C_{pk}}.
+#' 
+#' @usage 
+#' ss.ca.cp(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, 
+#'   ci = FALSE, alpha = 0.05)
+#' @usage 
+#' ss.ca.cpk(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, 
+#'   ci = FALSE, alpha = 0.05)
+#' @usage 
+#' ss.ca.z(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE)
+#' 
+#' @aliases ss.ca.z ss.ca.cp ss.ca.cpk
+#' 
+#' @param x A vector with the data of the process performance
+#' @param LSL Lower Specification Limit
+#' @param USL Upper Specification Limit
+#' @param LT Long Term data (TRUE/FALSE). Not used for the moment
+#' @param f.na.rm Remove NA data (TRUE/FALSE)
+#' @param ci If TRUE computes a Confidence Interval
+#' @param alpha Type I error (\eqn{\alpha}) for the Confidence Interval 
+#' @return A numeric value for the index, or a vector with the limits 
+#' of the Confidence Interval
+#' 
+#' @references 
+#' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+#' \emph{Six Sigma with {R}. Statistical Engineering for Process
+#'   Improvement}, Use R!, vol. 36. Springer, New York.
+#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#' 
+#' Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
+#'   (Sixth Edition). New York: Wiley&Sons\cr
+#' @author EL Cano
+#' @seealso \code{\link{ss.study.ca}}
+#' @keywords cp cpk capability
+#' @examples 
+#' ss.ca.cp(ss.data.ca$Volume,740, 760)
+#' ss.ca.cpk(ss.data.ca$Volume,740, 760)
+#' ss.ca.z(ss.data.ca$Volume,740,760)
+#' @export ss.ca.z ss.ca.cp ss.ca.cpk 
 ss.ca.z <- function(x, LSL = NA, USL = NA, 
 		LT = FALSE, f.na.rm = TRUE){
 	if (is.na(LSL) & is.na(USL)) {
@@ -99,6 +174,44 @@ ss.ca.cpk <- function(x, LSL = NA, USL = NA,
 }	
 
 ###############################################################################
+#' Graphs and figures for a Capability Study
+#' 
+#' Plots a Histogram with density lines about the data of a process. Check normality
+#' with qqplot and normality tests. Shows the Specification Limits and the 
+#' Capability Indices.
+#' 
+#' @usage 
+#' ss.study.ca(xST, xLT = NA, LSL = NA, USL = NA, Target = NA, 
+#'   alpha = 0.05, f.na.rm = TRUE, f.main = "Six Sigma Capability Analysis Study", 
+#'   f.sub = "")
+#' @param xST Short Term process performance data 
+#' @param xLT Long Term process performance data 
+#' @param LSL Lower Specification Limit of the process
+#' @param USL Upper Specification Limit of the process
+#' @param Target Target of the process
+#' @param alpha Type I error for the Confidence Interval
+#' @param f.na.rm If TRUE NA data will be removed
+#' @param f.main Main Title for the graphic output
+#' @param f.sub Subtitle for the graphic output
+#' @return Figures and plot for Capability Analysis
+#' 
+#' @references 
+#' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
+#' \emph{Six Sigma with {R}. Statistical Engineering for Process
+#'   Improvement}, Use R!, vol. 36. Springer, New York.
+#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#'   
+#' Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
+#'   (Sixth Edition). New York: Wiley&Sons
+#' 
+#' @seealso \code{\link{ss.ca.cp}}
+#' @author EL Cano
+#' @export
+#' @examples 
+#' 	ss.study.ca(ss.data.ca$Volume, rnorm(40, 753, 3), 
+#' 		LSL = 740, USL = 760, T = 750, alpha = 0.05, 
+#'  			f.sub = "Winery Project")
+#' @keywords capability
 ss.study.ca<-function (xST, xLT = NA, LSL = NA, USL = NA, 
 		Target = NA, alpha = 0.05, 
 		f.na.rm = TRUE,

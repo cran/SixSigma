@@ -14,5 +14,5 @@ citHeader("To cite package 'SixSigma' in publications use:")
               volume = "36",
               series = "Use R!",
               textVersion =
-              paste("Emilio L. Cano, Javier M. Moguerza, Andres Redchuk (2012)",
+              paste("Emilio L. Cano, Javier M. Moguerza and Andres Redchuk (2012)",
                     "Six Sigma with R. Springer, New York", sep=""))

@@ -1,47 +1,71 @@
-\name{ss.cc.getd2}
-\alias{ss.cc.getd2}
-\alias{ss.cc.getd3}
-\alias{ss.cc.getc4}
-\title{
-Functions to find out constants of the relative range distribution.
+\name{ss.cc}
+\alias{ss.cc}
+\title{Control Charts}
+\usage{
+  ss.cc(type, data, cdata, CTQ = names(data)[1], groups,
+    climits, nsigmas = 3)
+}
+\arguments{
+  \item{type}{Type of chart (see details)}
+
+  \item{data}{data.frame with the process data.}
+
+  \item{cdata}{Vector with the controlled process data to
+  compute limits.}
+
+  \item{CTQ}{Name of the column in the data.frame
+  containing the CTQ.}
+
+  \item{groups}{Name of the column in the data.frame
+  containing the groups.}
+
+  \item{climits}{Limits of the controlled process. It
+  should contain three ordered values: lower limit, center
+  line and upper limit.}
+
+  \item{nsigmas}{Number of sigmas to compute the limits
+  from the center line (default is 3)}
+}
+\value{
+  A plot with the control chart, and a list with the
+  following elements: \item{LCL}{Lower Control Limit}
+  \item{CL}{Center Line} \item{UCL}{Upper Control Limit}
+  \item{phase}{II when cdata or climits are provided. I
+  otherwise.} \item{out}{Out of control points}
 }
 \description{
-These functions compute the constants d2, d3 and c4 to get estimators of the
-standard deviation to set control limits.
+  Plot control charts
 }
-\usage{
-ss.cc.getd2(n = NA)
-ss.cc.getd3(n = NA)
-ss.cc.getc4(n = NA)
+\details{
+  If control limits are provided, \code{cdata} is dismissed
+  and a message is shown. If there are no control limits
+  nor controlled data, the limits are computed using
+  \code{data}. \cr Supported types of control charts:
+  \itemize{ \item{mr}{Moving Range} }
 }
-%- maybe also 'usage' for other objects documented here.
-\arguments{
-  \item{n}{
-Sample size
+\note{
+  We have created this function since the \code{qAnalyst}
+  package has been removed from \code{CRAN}, and it was
+  used in the "Six Sigma with R" book to plot moving
+  average control charts.
 }
-}
-
-\value{
-A numeric value for the constant.
-}
-
-\references{
-Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
-\emph{Six Sigma with {R}. Statistical Engineering for Process
-  Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
-}
-
-\author{
-Emilio L. Cano
-}
-
 \examples{
-ss.cc.getd2(20)
-ss.cc.getd3(20)
-ss.cc.getc4(20)
+ss.cc("mr", ss.data.pb1, CTQ = "pb.humidity")
+testout <- ss.data.pb1
+testout[31,] <- list(31,17)
+ss.cc("mr", testout, CTQ = "pb.humidity")
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\author{
+  EL Cano
+}
+\references{
+  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
+  2012. \emph{Six Sigma with {R}. Statistical Engineering
+  for Process Improvement}, Use R!, vol. 36. Springer, New
+  York.
+  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+}
+\seealso{
+  \code{\link{ss.cc.constants}}
+}
+
