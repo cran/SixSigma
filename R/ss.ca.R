@@ -223,7 +223,6 @@ ss.study.ca<-function (xST, xLT = NA, LSL = NA, USL = NA,
 	if (is.na(LSL) & is.na(USL)){
 		stop("No specification limits provided")
 	}
-	require(nortest)
 	#Facts
 	mST = mean(xST, na.rm = f.na.rm)
 	sST = sd(xST, na.rm = f.na.rm)
@@ -270,7 +269,7 @@ ss.study.ca<-function (xST, xLT = NA, LSL = NA, USL = NA,
 ##############	
 
 binwST <- diff(range(xST))/ sqrt(nST)
-ggdata <- melt(xST)
+ggdata <- reshape2::melt(xST)
 qqp <- ggplot(ggdata, aes(x=value))
 hist <- qqp + geom_histogram(aes(y = ..density..), 
 				binwidth = binwST,
@@ -329,7 +328,7 @@ if (!is.na(USL)){
 
 if (is.numeric(xLT)){
 	binwLT <- diff(range(xLT))/ sqrt(nLT)
-	ggdataLT <- melt(xLT)
+	ggdataLT <- reshape2::melt(xLT)
 	hist <- hist + 
 		stat_density(geom="path",
 				data = ggdataLT, 
@@ -364,8 +363,8 @@ if (is.numeric(xLT)){
 	popViewport()
 	vp.testn<-viewport(name="testn",layout.pos.row=2, layout.pos.col=2)
 	pushViewport(vp.testn)
-	ss.ts<-shapiro.test(xST)
-	ss.tl<-lillie.test(xST)
+	ss.ts <- shapiro.test(xST)
+	ss.tl <- nortest::lillie.test(xST)
 	if (min(ss.ts$p.value, ss.tl$pvalue) < alpha){
 		warning("Normality test/s failed")
 	} 

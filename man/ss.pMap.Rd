@@ -2,10 +2,9 @@
 \alias{ss.pMap}
 \title{Process Map}
 \usage{
-  ss.pMap(steps, inputs.overall, outputs.overall,
-    input.output, x.parameters, y.features,
-    main = "Six Sigma Process Map", sub,
-    ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
+ss.pMap(steps, inputs.overall, outputs.overall, input.output, x.parameters,
+  y.features, main = "Six Sigma Process Map", sub, ss.col = c("#666666",
+  "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
 }
 \arguments{
   \item{steps}{A vector of characters with the name of the
@@ -39,24 +38,24 @@
   (see details)}
 }
 \value{
-  A graphic representation of the Map Process.
+A graphic representation of the Map Process.
 }
 \description{
-  This function takes information about the process we want
-  to represent and draw the Process Map, with its X's, x's,
-  Y's and y's in each step of the process
+This function takes information about the process we want
+to represent and draw the Process Map, with its X's, x's,
+Y's and y's in each step of the process
 }
 \details{
-  The type of the x parameters and y features can be:
-  C(controllable), N(noise), Cr(Critical), P(Procedure).
-  The default value for ss.col is c("#666666", "#BBBBBB",
-  "#CCCCCC", "#DDDDDD", "#EEEEEE"), a grayscale style. You
-  can pass any accepted color string.
+The type of the x parameters and y features can be:
+C(controllable), N(noise), Cr(Critical), P(Procedure). The
+default value for ss.col is c("#666666", "#BBBBBB",
+"#CCCCCC", "#DDDDDD", "#EEEEEE"), a grayscale style. You
+can pass any accepted color string.
 }
 \note{
-  The process map is the starting point for a Six Sigma
-  Project, and it is very important to find out who the x's
-  and y'x are.
+The process map is the starting point for a Six Sigma
+Project, and it is very important to find out who the x's
+and y'x are.
 }
 \examples{
 inputs.overall<-c("operators", "tools", "raw material", "facilities")
@@ -94,19 +93,18 @@ ss.pMap(steps, inputs.overall, outputs.overall,
         sub="Paper Helicopter Project")
 }
 \author{
-  EL Cano
+EL Cano
 }
 \references{
-  \url{http://en.wikipedia.org/wiki/Business_Process_Mapping}\cr
+\url{http://en.wikipedia.org/wiki/Business_Process_Mapping}\cr
 
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \seealso{
-  \code{\link{ss.ceDiag}}
+\code{\link{ss.ceDiag}}
 }
 \keyword{map}
 \keyword{process}

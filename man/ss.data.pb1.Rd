@@ -8,15 +8,18 @@
     \item{\code{pb.humidity}}{Humidity of the particle board}
   }}
 \source{
-  See references.
+See references.
+}
+\usage{
+data(ss.data.pb1)
 }
 \description{
-  Humidity of 30 raw material used to make particle boards
-  for individual control chart.
+Humidity of 30 raw material used to make particle boards
+for individual control chart.
 }
 \note{
-  This data set is used in chapter 12 of the book ``Six
-  Sigma with R'' (see References).
+This data set is used in chapter 12 of the book ``Six Sigma
+with R'' (see References).
 }
 \examples{
 data(ss.data.pb1)
@@ -28,13 +31,11 @@ summary(pb.xbar.one)
 plot(pb.xbar.one)
 }
 \references{
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \keyword{cc}
 \keyword{data}
-\keyword{datasets}
 

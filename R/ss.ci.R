@@ -51,7 +51,7 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
 		digits = 3,
 		sub = "", ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")){
 	if (is.data.frame(data)){
-        attach(data, warn.conflicts=FALSE)
+    x <- data[[deparse(substitute(x))]]
     }
     na <- length(which(is.na(x)))
     if (na > 0) { cat(na, " missing values were ommitted\n")}
@@ -178,7 +178,7 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
     pushViewport(vp.hist)
     grid.rect()
 	
-	ggdata <- melt(x)
+	ggdata <- reshape2::melt(x)
 	binw <- diff(range(x))/ sqrt(n)
 	qqp <- ggplot(ggdata, aes(x = value))
 	myhist <- qqp + 
@@ -192,7 +192,9 @@ ss.ci<-function(x, sigma2 = NA, alpha = 0.05, data = NA,
 			stat_density(geom="path", position="identity", 
 					binwidth = binw,
 					size = 1) 
-    print(myhist, newpage=FALSE)
+    suppressWarnings(
+      print(myhist, newpage=FALSE)
+    )
 
     return (ci)
 }

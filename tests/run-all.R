@@ -4,7 +4,6 @@
 ###############################################################################
 
 
-library(testthat)
 library(SixSigma)
 
-test_package("SixSigma")
+testthat::test_package("SixSigma")

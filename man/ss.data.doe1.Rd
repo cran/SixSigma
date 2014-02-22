@@ -12,29 +12,31 @@
     \item{\code{ord}}{Randomized order}
   }}
 \source{
-  See references.
+See references.
+}
+\usage{
+data(ss.data.doe1)
 }
 \description{
-  Experimental data for the scores given to a set of pizza
-  doughs.
+Experimental data for the scores given to a set of pizza
+doughs.
 }
 \note{
-  This data set is used in chapter 11 of the book ``Six
-  Sigma with R'' (see References).
+This data set is used in chapter 11 of the book ``Six Sigma
+with R'' (see References).
 }
 \examples{
 data(ss.data.doe1)
 summary(ss.data.doe1)
+library(lattice)
 bwplot(score ~ flour | salt + bakPow , data = ss.data.doe1)
 }
 \references{
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \keyword{data}
-\keyword{datasets}
 \keyword{doe}
 
