@@ -20,7 +20,7 @@ A pdf document with a template of the paper helicopter design
 (see Fig. \ref{fig:template})
 is located in the 
 folder \texttt{doc} of the \texttt{SixSigma} package. 
-It can be also obtained with the command \texttt{vignette("helicopterInstructions"}.
+It can be also obtained with the command \texttt{vignette("HelicopterInstructions")}.
 
 Print it in A4 paper 
 without adjusting to the paper size to get the correct dimensions.

@@ -2,8 +2,7 @@
 \alias{ss.cc}
 \title{Control Charts}
 \usage{
-  ss.cc(type, data, cdata, CTQ = names(data)[1], groups,
-    climits, nsigmas = 3)
+ss.cc(type, data, cdata, CTQ = names(data)[1], groups, climits, nsigmas = 3)
 }
 \arguments{
   \item{type}{Type of chart (see details)}
@@ -27,27 +26,27 @@
   from the center line (default is 3)}
 }
 \value{
-  A plot with the control chart, and a list with the
-  following elements: \item{LCL}{Lower Control Limit}
-  \item{CL}{Center Line} \item{UCL}{Upper Control Limit}
-  \item{phase}{II when cdata or climits are provided. I
-  otherwise.} \item{out}{Out of control points}
+A plot with the control chart, and a list with the
+following elements: \item{LCL}{Lower Control Limit}
+\item{CL}{Center Line} \item{UCL}{Upper Control Limit}
+\item{phase}{II when cdata or climits are provided. I
+otherwise.} \item{out}{Out of control points}
 }
 \description{
-  Plot control charts
+Plot control charts
 }
 \details{
-  If control limits are provided, \code{cdata} is dismissed
-  and a message is shown. If there are no control limits
-  nor controlled data, the limits are computed using
-  \code{data}. \cr Supported types of control charts:
-  \itemize{ \item{mr}{Moving Range} }
+If control limits are provided, \code{cdata} is dismissed
+and a message is shown. If there are no control limits nor
+controlled data, the limits are computed using \code{data}.
+\cr Supported types of control charts: \itemize{
+\item{mr}{Moving Range} }
 }
 \note{
-  We have created this function since the \code{qAnalyst}
-  package has been removed from \code{CRAN}, and it was
-  used in the "Six Sigma with R" book to plot moving
-  average control charts.
+We have created this function since the \code{qAnalyst}
+package has been removed from \code{CRAN}, and it was used
+in the "Six Sigma with R" book to plot moving average
+control charts.
 }
 \examples{
 ss.cc("mr", ss.data.pb1, CTQ = "pb.humidity")
@@ -56,16 +55,15 @@ testout[31,] <- list(31,17)
 ss.cc("mr", testout, CTQ = "pb.humidity")
 }
 \author{
-  EL Cano
+EL Cano
 }
 \references{
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
 }
 \seealso{
-  \code{\link{ss.cc.constants}}
+\code{\link{ss.cc.constants}}
 }
 

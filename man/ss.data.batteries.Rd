@@ -10,15 +10,18 @@
    \item{\code{voltage}}{a numeric vector}
  }}
 \source{
-  See references.
+See references.
+}
+\usage{
+data(ss.data.batteries)
 }
 \description{
-  This is a simulated data set of 18 measurements of the
-  voltage of batteries using different voltmeters.
+This is a simulated data set of 18 measurements of the
+voltage of batteries using different voltmeters.
 }
 \note{
-  This data set is used in chapter 5 of the book ``Six
-  Sigma with R'' (see References).
+This data set is used in chapter 5 of the book ``Six Sigma
+with R'' (see References).
 }
 \examples{
 data(ss.data.batteries)
@@ -26,16 +29,14 @@ summary(ss.data.batteries)
 plot(voltage~voltmeter, data = ss.data.batteries)
 }
 \references{
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \seealso{
-  \link{ss.rr}
+\link{ss.rr}
 }
 \keyword{data}
-\keyword{datasets}
 \keyword{msa}
 

@@ -93,7 +93,7 @@ ss.lfa <- function(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0,
       layout.pos.col = 1)
     #plot
     pushViewport(vp.plot)
-    ggdata <- melt(with(lfa.data, get(lfa.ctq)))
+    ggdata <- reshape2::melt(with(lfa.data, get(lfa.ctq)))
     qqp <- ggplot(ggdata, aes(x = value))
     qqp <- qqp + stat_function(fun = function(x) {
           if (lfa.Y0 == 0){

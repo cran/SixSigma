@@ -13,7 +13,7 @@ lfaSmaller <- ss.lfa(ss.data.bolts, "diameter",
 lfaLarger <- ss.lfa(ss.data.bolts, "diameter", 
   lfa.Delta = 0.5, lfa.L0 = 0.001, lfa.Y0 = Inf, lfa.output = "text")
 
-test_that("Constant k is correctly computed",{
+testthat::test_that("Constant k is correctly computed",{
     expect_that(lfaNominal$lfa.k, equals(0.001/(0.5^2)))
     expect_that(lfaSmaller$lfa.k, equals(0.001/(0.5^2)))
     expect_that(lfaLarger$lfa.k, equals(0.001*(0.5^2)))

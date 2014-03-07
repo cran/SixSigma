@@ -2,9 +2,9 @@
 \alias{ss.ceDiag}
 \title{Cause and Effect Diagram}
 \usage{
-  ss.ceDiag(effect, causes.gr, causes,
-    main = "Six Sigma Cause-and-effect Diagram", sub,
-    ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
+ss.ceDiag(effect, causes.gr, causes,
+  main = "Six Sigma Cause-and-effect Diagram", sub, ss.col = c("#666666",
+  "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
 }
 \arguments{
   \item{effect}{A short character string that represents
@@ -26,20 +26,20 @@
   intensity}
 }
 \value{
-  A drawing of the causes and effect with "fish-bone" shape
+A drawing of the causes and effect with "fish-bone" shape
 }
 \description{
-  Represents a Cause and Effect Diagram by cause group.
+Represents a Cause and Effect Diagram by cause group.
 }
 \details{
-  The default value for ss.col is c("#666666", "#BBBBBB",
-  "#CCCCCC", "#DDDDDD", "#EEEEEE"), a grayscale style. You
-  can pass any accepted colour string.
+The default value for ss.col is c("#666666", "#BBBBBB",
+"#CCCCCC", "#DDDDDD", "#EEEEEE"), a grayscale style. You
+can pass any accepted colour string.
 }
 \note{
-  The cause and effect diagram is also known as "Ishikawa
-  diagram", and has been widely used in Quality Management.
-  It is one of the Seven Basic Tools of Quality.
+The cause and effect diagram is also known as "Ishikawa
+diagram", and has been widely used in Quality Management.
+It is one of the Seven Basic Tools of Quality.
 }
 \examples{
 effect <- "Flight Time"
@@ -55,20 +55,19 @@ causes[6] <- list(c("calibrate", "model"))
 ss.ceDiag(effect, causes.gr, causes, sub = "Paper Helicopter Project")
 }
 \author{
-  EL Cano
+EL Cano
 }
 \references{
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 
-  Wikipedia,
-  \url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
+Wikipedia,
+\url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
 }
 \seealso{
-  \code{\link{ss.pMap}}
+\code{\link{ss.pMap}}
 }
 \keyword{cause-and-effect}
 

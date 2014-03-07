@@ -2,9 +2,8 @@
 \alias{ss.lfa}
 \title{Loss Function Analysis}
 \usage{
-  ss.lfa(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0,
-    lfa.size = NA, lfa.output = "both",
-    lfa.sub = "Six Sigma Project")
+ss.lfa(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0, lfa.size = NA,
+  lfa.output = "both", lfa.sub = "Six Sigma Project")
 }
 \arguments{
   \item{lfa.data}{Data frame with the sample to get the
@@ -28,27 +27,27 @@
   \item{lfa.sub}{Subtitle for the graphic output.}
 }
 \value{
-  \item{lfa.k }{Constant k for the loss function}
-  \item{lfa,lf }{Expression with the loss function}
-  \item{lfa.MSD}{Mean Squared Differences from the target}
-  \item{lfa.avLoss}{Average Loss per unit of the process}
-  \item{lfa.Loss}{Total Loss of the process (if a size is
-  provided)}
+\item{lfa.k }{Constant k for the loss function}
+\item{lfa,lf }{Expression with the loss function}
+\item{lfa.MSD}{Mean Squared Differences from the target}
+\item{lfa.avLoss}{Average Loss per unit of the process}
+\item{lfa.Loss}{Total Loss of the process (if a size is
+provided)}
 }
 \description{
-  This function performs a Quality Loss Function Analysis,
-  based in the Taguchi Loss Function for "Nominal-the-Best"
-  characteristics.
+This function performs a Quality Loss Function Analysis,
+based in the Taguchi Loss Function for "Nominal-the-Best"
+characteristics.
 }
 \details{
-  \code{lfa.output} can take the values "text", "plot" or
-  "both".
+\code{lfa.output} can take the values "text", "plot" or
+"both".
 }
 \note{
-  For smaller-the-better characteristics, the target should
-  be zero (\code{lfa.Y0 = 0}). For larger-the-better
-  characteristics, the target should be infinity
-  (\code{lfa.Y0 = Inf}).
+For smaller-the-better characteristics, the target should
+be zero (\code{lfa.Y0 = 0}). For larger-the-better
+characteristics, the target should be infinity
+(\code{lfa.Y0 = Inf}).
 }
 \examples{
 ss.lfa(ss.data.bolts, "diameter", 0.5, 10, 0.001,
@@ -56,22 +55,21 @@ ss.lfa(ss.data.bolts, "diameter", 0.5, 10, 0.001,
 		lfa.size = 100000, lfa.output = "both")
 }
 \author{
-  EL Cano
+EL Cano
 }
 \references{
-  Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's
-  quality engineering handbook}. John Wiley\cr
+Taguchi G, Chowdhury S,Wu Y (2005) \emph{Taguchi's quality
+engineering handbook}. John Wiley\cr
 
-  Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
-  2012. \emph{Six Sigma with {R}. Statistical Engineering
-  for Process Improvement}, Use R!, vol. 36. Springer, New
-  York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres.
+2012. \emph{Six Sigma with {R}. Statistical Engineering for
+Process Improvement}, Use R!, vol. 36. Springer, New York.
+\url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
 }
 \seealso{
-  \code{\link{ss.lf}}, \code{\link{ss.data.bolts}}.
+\code{\link{ss.lf}}, \code{\link{ss.data.bolts}}.
 }
+\keyword{Taguchi}
 \keyword{function}
 \keyword{loss}
-\keyword{Taguchi}
 

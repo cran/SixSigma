@@ -161,16 +161,22 @@ ss.cc <- function(type, data, cdata, CTQ = names(data)[1], groups,
   # Select type of control chart. Stop if not supported. 
   if (type == "mr"){
     # Compute lines (center and limits)
-    data.vector <- data.lim[, eval(CTQ)]
+    if (missing(climits)){
+      datalim.vector <- data.lim[, eval(CTQ)]
+      MRlim <- sapply(1:(length(datalim.vector) - 1), function(x){
+          abs(datalim.vector[x + 1] - datalim.vector[x])
+        })
+#      avgMR <- mean(MR)
+      CL <- mean(MRlim)
+      LCL <- CL * (1 - nsigmas * (ss.cc.getd3(2) / ss.cc.getd2(2)))
+      UCL <- CL * (1 + nsigmas * (ss.cc.getd3(2) / ss.cc.getd2(2)))
+    }
+    if (LCL < 0) LCL <- 0 # Always matters if nsigmas > 1.32 (usual case)
+    # Get points to plot
+    data.vector <- data[, eval(CTQ)]
     MR <- sapply(1:(length(data.vector) - 1), function(x){
           abs(data.vector[x + 1] - data.vector[x])
         })
-    avgMR <- mean(MR)
-    CL <- avgMR
-    LCL <- avgMR * (1 - nsigmas * (ss.cc.getd3(2) / ss.cc.getd2(2)))
-    UCL <- avgMR * (1 + nsigmas * (ss.cc.getd3(2) / ss.cc.getd2(2)))
-    if (LCL < 0) LCL <- 0 # Always matters if nsigmas > 1.32 (usual case)
-    
     gdata <- data.frame(item = 1:length(MR), 
         MR, out = MR > UCL | MR < LCL)
     outData <- subset(gdata, out == TRUE)
@@ -204,9 +210,12 @@ ss.cc <- function(type, data, cdata, CTQ = names(data)[1], groups,
   cat(paste("Phase", out[["phase"]], "limits:\n"))
   print(unlist(out[1:3]))
   cat("\nOut of control Moving Range:\n")
-  print(out[["out"]])
+  if (length(out[["out"]]) > 0){
+    print(out[["out"]])
+  } else {
+    cat("None\n")
+  }
   invisible(out)
-  
 }
 
 

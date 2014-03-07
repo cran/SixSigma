@@ -141,6 +141,7 @@ NULL
 #' @examples
 #' data(ss.data.doe1)
 #' summary(ss.data.doe1)
+#' library(lattice)
 #' bwplot(score ~ flour | salt + bakPow , data = ss.data.doe1)
 #' 
 NULL
@@ -181,6 +182,7 @@ NULL
 #' @examples
 #' data(ss.data.doe2)
 #' summary(ss.data.doe2)
+#' library(lattice)
 #' bwplot(score ~ temp | time, data = ss.data.doe2)
 #' 
 NULL
@@ -219,6 +221,7 @@ NULL
 #' @examples
 #' data(ss.data.pastries)
 #' summary(ss.data.pastries)
+#' library(lattice)
 #' xyplot(comp ~ lab | batch, data = ss.data.pastries)
 #' 
 NULL
