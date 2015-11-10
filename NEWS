@@ -1,4 +1,15 @@
-SixSigma 0.8-0
+SixSigma 0.9-0
+--------------
+* Functions for monitoring non-linear profiles
+* Data sets for the example in the book "Quality Control with R"
+* Some bug fixes
+
+SixSigma 0.8-2
+--------------
+* Fixed hard-coded axis limits and positions in `ss.study.ca`
+* CRAN policy fixes
+
+SixSigma 0.8-1
 --------------
 * Fixed NOTES not accepted by CRAN CHECK
 
