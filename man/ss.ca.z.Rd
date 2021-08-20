@@ -8,6 +8,11 @@
 \usage{
 ss.ca.cp(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, 
   ci = FALSE, alpha = 0.05)
+
+ss.ca.cpk(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE, 
+  ci = FALSE, alpha = 0.05)
+
+ss.ca.z(x, LSL = NA, USL = NA, LT = FALSE, f.na.rm = TRUE)
 }
 \arguments{
 \item{x}{A vector with the data of the process performance}
@@ -41,7 +46,7 @@ ss.ca.z(ss.data.ca$Volume,740,760)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+  \url{https://www.springer.com/gp/book/9781461436515}.
 
 Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
   (Sixth Edition). New York: Wiley&Sons\cr

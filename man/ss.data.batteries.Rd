@@ -4,13 +4,15 @@
 \name{ss.data.batteries}
 \alias{ss.data.batteries}
 \title{Data for the batteries example}
-\format{A data frame with 18 observations on the following 4 variables.
+\format{
+A data frame with 18 observations on the following 4 variables.
  \describe{
    \item{\code{voltmeter}}{a factor with levels \code{1} \code{2}}
    \item{\code{battery}}{a factor with levels \code{1} \code{2} \code{3}}
    \item{\code{run}}{a factor with levels \code{1} \code{2} \code{3}}
    \item{\code{voltage}}{a numeric vector}
- }}
+ }
+}
 \source{
 See references.
 }
@@ -35,7 +37,7 @@ plot(voltage~voltmeter, data = ss.data.batteries)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \seealso{
 \link{ss.rr}

@@ -4,13 +4,15 @@
 \name{ss.data.pastries}
 \alias{ss.data.pastries}
 \title{Pastries data}
-\format{A data frame with 18 observations on the following 4 variables.
+\format{
+A data frame with 18 observations on the following 4 variables.
   \describe{
     \item{\code{lab}}{laboratory: a factor with levels \code{1} \code{2} \code{3}}
     \item{\code{batch}}{batch: a factor with levels \code{1} \code{2} \code{3}}
     \item{\code{run}}{identifies the run: a factor with levels \code{1} \code{2}}
     \item{\code{comp}}{proportion of the compound in the pastry: a numeric vector}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -36,7 +38,7 @@ lattice::xyplot(comp ~ lab | batch, data = ss.data.pastries)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \keyword{data}
 \keyword{msa}

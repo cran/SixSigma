@@ -4,14 +4,16 @@
 \name{ss.data.pc.big}
 \alias{ss.data.pc.big}
 \title{Larger data set for the printer cartridges example}
-\format{A data frame with 72 observations on the following 5 variables, 
+\format{
+A data frame with 72 observations on the following 5 variables, 
   \describe{
     \item{\code{filler}}{a factor with levels \code{1} \code{2} \code{3}}
     \item{\code{batch}}{a factor with levels \code{1} \code{2} \code{3} \code{4}}
     \item{\code{col}}{a factor with levels \code{B} \code{C}}
     \item{\code{operator}}{a factor with levels \code{1} \code{2} \code{3}}
     \item{\code{volume}}{a numeric vector}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -35,7 +37,7 @@ summary(ss.data.pc.big)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \keyword{charts}
 \keyword{data}

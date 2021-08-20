@@ -4,10 +4,12 @@
 \name{ss.data.bolts}
 \alias{ss.data.bolts}
 \title{Data for the bolts example}
-\format{A data frame with 50 observations on the following variable.
+\format{
+A data frame with 50 observations on the following variable.
   \describe{
     \item{\code{diameter}}{a numeric vector with the diameter of the bolts}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -32,7 +34,7 @@ hist(ss.data.bolts$diameter)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \seealso{
 \link{ss.lfa}

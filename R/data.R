@@ -22,7 +22,7 @@
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #' 
 #' @source See references.
 #' @aliases ss.data.batteries
@@ -57,7 +57,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.bolts
@@ -91,7 +91,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.ca
@@ -130,7 +130,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.doe1
@@ -173,7 +173,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.doe2
@@ -211,7 +211,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pastries
@@ -245,7 +245,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pb1
@@ -256,11 +256,6 @@ NULL
 #' @examples
 #' data(ss.data.pb1)
 #' summary(ss.data.pb1)
-#' library(qcc)
-#' pb.groups.one <- with(ss.data.pb1, qcc.groups(pb.humidity, pb.group))
-#' pb.xbar.one <- qcc(pb.groups.one, type="xbar.one")
-#' summary(pb.xbar.one)
-#' plot(pb.xbar.one)
 #' 
 NULL
 
@@ -283,7 +278,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pb2
@@ -294,13 +289,6 @@ NULL
 #' @examples
 #' data(ss.data.pb2)
 #' summary(ss.data.pb2)
-#' if (require(qcc)){
-#'   pb.groups.xbar <- with(ss.data.pb2, qcc.groups(pb.humidity, pb.group))
-#'   pb.xbar <- qcc(pb.groups.xbar, type="xbar")
-#'   summary(pb.xbar)
-#' } else {
-#' message("qcc package is needed to run this example")
-#' }
 #' 
 NULL
 
@@ -324,7 +312,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pb3
@@ -335,13 +323,6 @@ NULL
 #' @examples
 #' data(ss.data.pb3)
 #' summary(ss.data.pb3)
-#' if (require(qcc)){
-#' with(ss.data.pb3,
-#' 		plot(qcc(stockouts, orders, type ="p"))
-#' 	)
-#' } else {
-#' message("qcc package is needed to run this example")
-#' }
 #' 
 NULL
 
@@ -364,7 +345,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pb4
@@ -401,7 +382,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pc.big
@@ -437,7 +418,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pc.r
@@ -475,7 +456,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.pc
@@ -513,7 +494,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.rr
@@ -550,7 +531,7 @@ NULL
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+#'   \url{https://www.springer.com/gp/book/9781461436515}.\cr
 #'
 #' @source See references.
 #' @aliases ss.data.strings
@@ -612,9 +593,7 @@ NULL
 #' 
 #' data(ss.data.density)
 #' str(ss.data.density) 
-#' library(qcc)
-#' qcc(ss.data.density,
-#'     type = "xbar.one")
+#' summary(ss.data.density) 
 #' 
 NULL
 #' Metal Plates Thickness

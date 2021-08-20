@@ -1,5 +1,4 @@
 ### R code from vignette source 'ShewhartConstants.Rnw'
-### Encoding: UTF-8
 
 ###################################################
 ### code chunk number 1: ShewhartConstants.Rnw:11-30

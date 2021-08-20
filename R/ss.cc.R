@@ -17,7 +17,7 @@ if(getRversion() >= '2.15.1') utils::globalVariables(c("item"))
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#'   \url{https://www.springer.com/gp/book/9781461436515}.
 #' 
 #' @seealso ss.cc
 #' 
@@ -112,7 +112,7 @@ ss.cc.getd3 <- function (n = NA){
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+#'   \url{https://www.springer.com/gp/book/9781461436515}.
 #' 
 #' @seealso \code{\link{ss.cc.constants}}
 #' @author EL Cano
@@ -190,10 +190,12 @@ ss.cc <- function(type, data, cdata, CTQ = names(data)[1], groups,
         ggtitle("Moving Range Control Chart") +
         scale_y_continuous(name = "Moving Range")
     if (nrow(outData) > 0){
-      ccPlot <- ccPlot + geom_point(x = outData$item, 
-          y = outData$MR, 
-          col = "red",
-          size = 2.5)
+      ccPlot <- ccPlot + 
+        geom_point(data = outData,
+                   aes(x = item, 
+                       y = MR), 
+                   col = "red",
+                   size = 2.5)
     }
     
   } else{

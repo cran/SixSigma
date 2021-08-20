@@ -4,9 +4,14 @@
 \alias{ss.ceDiag}
 \title{Cause and Effect Diagram}
 \usage{
-ss.ceDiag(effect, causes.gr, causes,
-  main = "Six Sigma Cause-and-effect Diagram", sub, ss.col = c("#666666",
-  "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
+ss.ceDiag(
+  effect,
+  causes.gr,
+  causes,
+  main = "Six Sigma Cause-and-effect Diagram",
+  sub,
+  ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")
+)
 }
 \arguments{
 \item{effect}{A short character string that represents the effect we want to analyse.}
@@ -55,9 +60,9 @@ ss.ceDiag(effect, causes.gr, causes, sub = "Paper Helicopter Project")
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 
-Wikipedia, \url{http://en.wikipedia.org/wiki/Ishikawa_diagram}
+Wikipedia, \url{https://en.wikipedia.org/wiki/Ishikawa_diagram}
 }
 \seealso{
 \code{\link{ss.pMap}}

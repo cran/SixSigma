@@ -4,7 +4,8 @@
 \name{ss.data.strings}
 \alias{ss.data.strings}
 \title{Data set for the Guitar Strings example}
-\format{A data frame with 120 observations on the following 6 variables.
+\format{
+A data frame with 120 observations on the following 6 variables.
   \describe{
     \item{\code{id}}{a numeric vector}
     \item{\code{type}}{a factor with levels \code{A5} \code{B2} \code{D4} \code{E1} \code{E6} \code{G3}}
@@ -12,7 +13,8 @@
     \item{\code{len}}{a numeric vector for length}
     \item{\code{sound}}{a numeric vector for}
     \item{\code{power}}{a numeric vector}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -35,7 +37,7 @@ summary(ss.data.strings)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \keyword{data}
 \keyword{msa}

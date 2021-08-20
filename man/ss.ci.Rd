@@ -4,10 +4,18 @@
 \alias{ss.ci}
 \title{Confidence Interval for the mean}
 \usage{
-ss.ci(x, sigma2 = NA, alpha = 0.05, data = NA, xname = "x",
-  approx.z = FALSE, main = "Confidence Interval for the Mean", digits = 3,
-  sub = "", ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD",
-  "#EEEEEE"))
+ss.ci(
+  x,
+  sigma2 = NA,
+  alpha = 0.05,
+  data = NA,
+  xname = "x",
+  approx.z = FALSE,
+  main = "Confidence Interval for the Mean",
+  digits = 3,
+  sub = "",
+  ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")
+)
 }
 \arguments{
 \item{x}{A numeric vector with the variable data}
@@ -60,7 +68,7 @@ ss.ci(len, data=ss.data.strings, alpha = 0.05,
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+  \url{https://www.springer.com/gp/book/9781461436515}.
 }
 \seealso{
 \code{\link{ss.data.rr}}

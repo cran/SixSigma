@@ -1,27 +1,39 @@
 Package: SixSigma
 Type: Package
 Title: Six Sigma Tools for Quality Control and Improvement
-Version: 0.9-52
+Version: 0.10.3
 Encoding: UTF-8
-Author: Emilio L. Cano, Javier M. Moguerza, Mariano Prieto and Andrés Redchuk
-Maintainer: Emilio L. Cano <emilio.lcano@uclm.es>
+Authors@R: c(person("Emilio L.", "Cano", email = "emilio@lcano.com", 
+                  role = c("aut", "cre"),
+                  comment = c(ORCID = "0000-0002-6101-9755")),
+             person("Javier M.", "Moguerza", role = c("aut")),
+             person("Mariano", "Prieto", role = c("aut")),
+             person("Andrés", "Redchuk", role = c("aut")),
+             person("Manuel", "Alfaro", role = c("ctb")))
+Maintainer: Emilio L. Cano <emilio@lcano.com>
 Description: Functions and utilities to perform
     Statistical Analyses in the Six Sigma way.
     Through the DMAIC cycle (Define, Measure, Analyze, Improve, Control),
     you can manage several Quality Management studies:
     Gage R&R, Capability Analysis, Control Charts, Loss Function Analysis,
-    etc. Data frames used in the books "Six Sigma with R", Cano et al. (2012) [ISBN 978-1-4614-3652-2]
-    and "Quality Control with R", Cano et al. (2015) [ISBN 978-3-319-24046-6], 
+    etc. Data frames used in the books "Six Sigma with R" [ISBN 978-1-4614-3652-2]
+    and "Quality Control with R" [ISBN 978-3-319-24046-6], 
     are also included in the package.
-URL: http://www.sixsigmawithr.com
+URL: https://www.sixsigmawithr.com
 License: GPL (>= 2)
-Depends: R (>= 2.14.0)
-Imports: grDevices, stats, graphics, qcc, lattice, ggplot2, reshape2,
+Depends: R (>= 3.5.0)
+Imports: grDevices, stats, graphics, lattice, ggplot2, reshape2,
         nortest, e1071, scales, testthat, xtable
 LazyLoad: yes
 LazyData: yes
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
+Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2018-04-15 19:41:16 UTC; emilio
+Packaged: 2021-08-20 15:00:21 UTC; emilio.lcano
+Author: Emilio L. Cano [aut, cre] (<https://orcid.org/0000-0002-6101-9755>),
+  Javier M. Moguerza [aut],
+  Mariano Prieto [aut],
+  Andrés Redchuk [aut],
+  Manuel Alfaro [ctb]
 Repository: CRAN
-Date/Publication: 2018-04-15 20:38:06 UTC
+Date/Publication: 2021-08-20 16:10:02 UTC

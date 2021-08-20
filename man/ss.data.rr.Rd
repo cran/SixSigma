@@ -4,7 +4,8 @@
 \name{ss.data.rr}
 \alias{ss.data.rr}
 \title{Gage R&R data}
-\format{A data frame with 27 observations on the following 5 variables.
+\format{
+A data frame with 27 observations on the following 5 variables.
   \describe{
        \item{\code{prototype}}{a factor with levels \code{prot #1}
 	 \code{prot #2} \code{prot #3}}
@@ -13,7 +14,8 @@
     \item{\code{run}}{a factor with levels \code{run #1} \code{run #2} \code{run #3}}
     \item{\code{time1}}{a numeric vector}
     \item{\code{time2}}{a numeric vector}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -36,7 +38,7 @@ summary(ss.data.rr)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \keyword{data}
 \keyword{msa}

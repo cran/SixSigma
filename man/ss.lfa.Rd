@@ -4,8 +4,16 @@
 \alias{ss.lfa}
 \title{Loss Function Analysis}
 \usage{
-ss.lfa(lfa.data, lfa.ctq, lfa.Delta, lfa.Y0, lfa.L0, lfa.size = NA,
-  lfa.output = "both", lfa.sub = "Six Sigma Project")
+ss.lfa(
+  lfa.data,
+  lfa.ctq,
+  lfa.Delta,
+  lfa.Y0,
+  lfa.L0,
+  lfa.size = NA,
+  lfa.output = "both",
+  lfa.sub = "Six Sigma Project"
+)
 }
 \arguments{
 \item{lfa.data}{Data frame with the sample to get the average loss.}
@@ -55,7 +63,7 @@ Wiley\cr
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \seealso{
 \code{\link{ss.lf}}, \code{\link{ss.data.bolts}}.

@@ -4,11 +4,13 @@
 \name{ss.data.pb4}
 \alias{ss.data.pb4}
 \title{Data for Practicle Boards Example - number of defects}
-\format{A data frame with 80 observations on the following 2 variables.
+\format{
+A data frame with 80 observations on the following 2 variables.
   \describe{
     \item{\code{order}}{Order id}
     \item{\code{defects}}{Number of defects}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -31,7 +33,7 @@ summary(ss.data.pb4)
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \keyword{cc}
 \keyword{data}

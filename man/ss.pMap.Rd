@@ -4,9 +4,17 @@
 \alias{ss.pMap}
 \title{Process Map}
 \usage{
-ss.pMap(steps, inputs.overall, outputs.overall, input.output, x.parameters,
-  y.features, main = "Six Sigma Process Map", sub, ss.col = c("#666666",
-  "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE"))
+ss.pMap(
+  steps,
+  inputs.overall,
+  outputs.overall,
+  input.output,
+  x.parameters,
+  y.features,
+  main = "Six Sigma Process Map",
+  sub,
+  ss.col = c("#666666", "#BBBBBB", "#CCCCCC", "#DDDDDD", "#EEEEEE")
+)
 }
 \arguments{
 \item{steps}{A vector of characters with the name of the 'n' steps}
@@ -87,12 +95,12 @@ ss.pMap(steps, inputs.overall, outputs.overall,
 
 }
 \references{
-\url{http://en.wikipedia.org/wiki/Business_Process_Mapping}\cr
+\url{https://en.wikipedia.org/wiki/Business_Process_Mapping}\cr
  
   Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \seealso{
 \code{\link{ss.ceDiag}}

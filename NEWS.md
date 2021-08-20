@@ -1,3 +1,53 @@
+SixSigma
+========
+
+SixSigma 0.10.3
+---------------
+* Fix more moved urls in documentation
+
+SixSigma 0.10.2
+---------------
+* Fix moved urls in documentation (.rd files)
+* Fix example of ss.heli() (avoid generate pdf on checks)
+
+SixSigma 0.10.1
+---------------
+* Fix moved urls in documentation
+
+SixSigma 0.10.0
+---------------
+* Fix [#9](https://github.com/emilopezcano/SixSigma/issues/9)
+* Fix [#10](https://github.com/emilopezcano/SixSigma/issues/10). `ss.rr` gains an argument `signifstars` that avoids overwriting the global option. FALSE by default.
+* NEWS -> NEWS.md
+* Documentation with pkgdown at http://emilopezcano.github.io/SixSigma/
+
+SixSigma 0.9-58
+---------------
+* Remove dependency on qcc
+* Update documentation
+* Fix testing issues
+
+SixSigma 0.9-57
+---------------
+* Fix bug on ss.rr when no variation (with thanks to Gilles Chassat)
+
+SixSigma 0.9-56
+---------------
+* Fix bug on ss.cc when plotting MR control chart (with thanks to Jl Z)
+
+
+SixSigma 0.9-55
+--------------
+* Allow not to print plots (ss.rr)
+
+SixSigma 0.9-54
+--------------
+* Allow nested designs in R&R Gage studies (ss.rr)
+
+SixSigma 0.9-53
+--------------
+* Add option f.colours to ss.study.ca
+
 SixSigma 0.9-52
 --------------
 * Fix bug on computation of Z_lt

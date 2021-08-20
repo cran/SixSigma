@@ -4,11 +4,13 @@
 \name{ss.data.pb2}
 \alias{ss.data.pb2}
 \title{Particle Boards Example - by Groups}
-\format{A data frame with 100 observations on the following 2 variables.
+\format{
+A data frame with 100 observations on the following 2 variables.
   \describe{
     \item{\code{pb.group}}{a numeric vector}
     \item{\code{pb.humidity}}{a numeric vector}
-  }}
+  }
+}
 \source{
 See references.
 }
@@ -25,20 +27,13 @@ References).
 \examples{
 data(ss.data.pb2)
 summary(ss.data.pb2)
-if (require(qcc)){
-  pb.groups.xbar <- with(ss.data.pb2, qcc.groups(pb.humidity, pb.group))
-  pb.xbar <- qcc(pb.groups.xbar, type="xbar")
-  summary(pb.xbar)
-} else {
-message("qcc package is needed to run this example")
-}
 
 }
 \references{
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.\cr
+  \url{https://www.springer.com/gp/book/9781461436515}.\cr
 }
 \keyword{cc}
 \keyword{data}

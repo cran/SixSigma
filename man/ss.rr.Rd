@@ -4,9 +4,24 @@
 \alias{ss.rr}
 \title{Gage R & R (Measurement System Assessment)}
 \usage{
-ss.rr(var, part, appr, lsl = NA, usl = NA, sigma = 6, data,
-  main = "Six Sigma Gage R&R Study", sub = "", alphaLim = 0.05,
-  errorTerm = "interaction", digits = 4)
+ss.rr(
+  var,
+  part,
+  appr,
+  lsl = NA,
+  usl = NA,
+  sigma = 6,
+  tolerance = usl - lsl,
+  data,
+  main = "Six Sigma Gage R&R Study",
+  sub = "",
+  alphaLim = 0.05,
+  errorTerm = "interaction",
+  digits = 4,
+  method = "crossed",
+  print_plot = TRUE,
+  signifstars = FALSE
+)
 }
 \arguments{
 \item{var}{Measured variable}
@@ -21,6 +36,8 @@ ss.rr(var, part, appr, lsl = NA, usl = NA, sigma = 6, data,
 
 \item{sigma}{Numeric value for number of std deviations to use in calculating Study Variation}
 
+\item{tolerance}{Numeric value for the tolerance}
+
 \item{data}{Data frame containing the variables}
 
 \item{main}{Main title for the graphic output}
@@ -32,6 +49,12 @@ ss.rr(var, part, appr, lsl = NA, usl = NA, sigma = 6, data,
 \item{errorTerm}{Which term of the model should be used as error term (for the model with interation)}
 
 \item{digits}{Number of decimal digits for output}
+
+\item{method}{Character to specify the type of analysis to perform, \code{"crossed"} (default) or \code{"nested"}}
+
+\item{print_plot}{if TRUE (default) the plots are printed. Change to FALSE to avoid printing plots.}
+
+\item{signifstars}{if FALSE (default) the significance stars are ommitted. Change to TRUE to allow printing stars.}
 }
 \value{
 Analysis of Variance Table/s. Variance composition and \%Study Var. Graphics.
@@ -70,6 +93,13 @@ Argument \code{alphaLim} is used as upper limit to use the full model, i.e.,
 with interaction. Above this value for the interaction effect, the 
 ANOVA table without the interaction effect is also obtained, and the variance
 components are computed pooling the interaction term with the repeatibility.
+
+\code{Tolerance} can be calculaten from usl and lsl values or specified by hand.
+
+The type of analysis to perform can be specified with the parameter method, \code{"crossed"} or \code{"nested"}. 
+Be sure to select the correct one and to have the data prepare for such type of analysis.
+If you don't know wich one is for you check it before. It is really important to perform the correct one.
+Otherwise results have no sense.
 }
 \examples{
 ss.rr(time1, prototype, operator, data = ss.data.rr, 
@@ -77,7 +107,8 @@ ss.rr(time1, prototype, operator, data = ss.data.rr,
 	alphaLim = 0.05,
 	errorTerm = "interaction",
 	lsl = 0.7,
-	usl = 1.8)
+	usl = 1.8,
+	method = "crossed")
 
 }
 \references{
@@ -87,7 +118,7 @@ Automotive Industry Action Group. (2010). Measurement Systems Analysis
 Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 \emph{Six Sigma with {R}. Statistical Engineering for Process
   Improvement}, Use R!, vol. 36. Springer, New York.
-  \url{http://www.springer.com/statistics/book/978-1-4614-3651-5}.
+  \url{https://www.springer.com/gp/book/9781461436515}.
 
 Montgomery, D. C. (2009). Introduction to Statistical Quality Control
 (Sixth Edition ed.). New York: Wiley & Sons, Inc.
