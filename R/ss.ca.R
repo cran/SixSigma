@@ -2,7 +2,7 @@
 # 
 # Author: Emilio Lopez
 ###############################################################################
-if(getRversion() >= '2.15.1') utils::globalVariables(c("..density..", "value"))
+# if(getRversion() >= '2.15.1') utils::globalVariables(c("..density..", "value"))
 
 
 #' Main calculations regarding The Voice of the Process in SixSigma: Yield, FTY, RTY,
@@ -11,7 +11,7 @@ if(getRversion() >= '2.15.1') utils::globalVariables(c("..density..", "value"))
 #' Computes the Yield, First Time Yield, Rolled Throughput Yield and Defects
 #' per Million Opportunities of a process.
 #' 
-#' The three arguments must have the same length.
+#' The arguments defects and rework must have the same length.
 #' 
 #' @param defects A vector with the number of defects in each product/batch, ...
 #' @param rework A vector with the number of items/parts reworked
@@ -25,7 +25,7 @@ if(getRversion() >= '2.15.1') utils::globalVariables(c("..density..", "value"))
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{https://www.springer.com/gp/book/9781461436515}.
+#'   \url{https://link.springer.com/book/10.1007/978-1-4614-3652-2}.
 #' 
 #' Gygi C, DeCarlo N, Williams B (2005) \emph{Six sigma for dummies}. --For dummies,
 #'   Wiley Pub.
@@ -76,7 +76,7 @@ ss.ca.yield <- function(defects = 0, rework = 0, opportunities = 1){
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{https://www.springer.com/gp/book/9781461436515}.
+#'   \url{https://link.springer.com/book/10.1007/978-1-4614-3652-2}.
 #' 
 #' Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
 #'   (Sixth Edition). New York: Wiley&Sons\cr
@@ -205,7 +205,7 @@ ss.ca.cpk <- function(x, LSL = NA, USL = NA,
 #' Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andres. 2012.
 #' \emph{Six Sigma with {R}. Statistical Engineering for Process
 #'   Improvement}, Use R!, vol. 36. Springer, New York.
-#'   \url{https://www.springer.com/gp/book/9781461436515}.
+#'   \url{https://link.springer.com/book/10.1007/978-1-4614-3652-2}.
 #'   
 #' Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
 #'   (Sixth Edition). New York: Wiley&Sons
@@ -288,8 +288,8 @@ ss.study.ca<-function (xST, xLT = NA, LSL = NA, USL = NA,
 
 binwST <- diff(range(xST))/ sqrt(nST)
 ggdata <- reshape2::melt(xST)
-qqp <- ggplot(ggdata, aes(x=value))
-hist <- qqp + geom_histogram(aes(y = ..density..), 
+qqp <- ggplot(ggdata, aes(x = .data$value))
+hist <- qqp + geom_histogram(aes(y = after_stat(density)), 
 				binwidth = binwST,
 				fill = f.colours[1], 
 				stat = "bin")
