@@ -1,4 +1,6 @@
-NULL
+#' @keywords internal
+"_PACKAGE"
+
 #' Six Sigma Tools for Quality and Process Improvement
 #'
 #' This package contains functions and utilities to perform Statistical Analyses in the Six Sigma way. 
@@ -33,7 +35,7 @@ NULL
 #'     }
 #' 
 #' @docType package
-#' @name SixSigma
+#' @name SixSigma-package
 #' @title Six Sigma Tools for Quality and Process Improvement
 #' @author Emilio L. Cano, Javier M. Moguerza, Mariano Prieto Corcoba and Andrés Redchuk; 
 #' 
@@ -63,9 +65,14 @@ NULL
 #' Montgomery, DC (2008) \emph{Introduction to Statistical Quality Control}
 #'   (Sixth Edition). New York: Wiley&Sons\cr
 #' 
-#' Wikipedia, \url{https://link.springer.com/book/10.1007/978-1-4614-3652-2}
+#' Wikipedia, \url{https://en.wikipedia.org/wiki/Six_Sigma}
 #'
 #' @import grDevices stats graphics lattice ggplot2 testthat xtable
 NULL
 
 
+
+
+## usethis namespace: start
+## usethis namespace: end
+NULL

@@ -1,3 +1,7 @@
+# SixSigma 0.11.1
+
+* Hotfix: package documentation issue
+
 
 # SixSigma 0.11.0
 

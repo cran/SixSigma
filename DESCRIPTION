@@ -1,7 +1,7 @@
 Package: SixSigma
 Type: Package
 Title: Six Sigma Tools for Quality Control and Improvement
-Version: 0.11.0
+Version: 0.11.1
 Encoding: UTF-8
 Authors@R: c(person("Emilio L.", "Cano", email = "emilio@lcano.com", 
                   role = c("aut", "cre"),
@@ -14,7 +14,7 @@ Authors@R: c(person("Emilio L.", "Cano", email = "emilio@lcano.com",
              person("Paula", "Martínez", role = c("ctb")),
              person("Manuel", "Alfaro", role = c("ctb")))
 Maintainer: Emilio L. Cano <emilio@lcano.com>
-BugReports: https://github.com/emilopezcano/SixSigma/issues
+BugReports: https://github.com/emilopezcano/SixSigma/issues/
 Description: Functions and utilities to perform
     Statistical Analyses in the Six Sigma way.
     Through the DMAIC cycle (Define, Measure, Analyze, Improve, Control),
@@ -23,9 +23,9 @@ Description: Functions and utilities to perform
     etc. Data frames used in the books "Six Sigma with R" [ISBN 978-1-4614-3652-2]
     and "Quality Control with R" [ISBN 978-3-319-24046-6], 
     are also included in the package.
-URL: https://www.sixsigmawithr.com,
+URL: https://www.sixsigmawithr.com/,
         http://emilopezcano.github.io/SixSigma/,
-        https://github.com/emilopezcano/SixSigma
+        https://github.com/emilopezcano/SixSigma/
 License: GPL (>= 2)
 Depends: R (>= 3.5.0)
 Imports: grDevices, stats, graphics, lattice, ggplot2, reshape2,
@@ -36,7 +36,7 @@ RoxygenNote: 7.2.3
 Config/testthat/edition: 3
 Suggests: covr
 NeedsCompilation: no
-Packaged: 2023-04-08 16:50:24 UTC; emilio.lcano
+Packaged: 2023-08-21 16:30:45 UTC; emilio.lcano
 Author: Emilio L. Cano [aut, cre] (<https://orcid.org/0000-0002-6101-9755>),
   Javier M. Moguerza [aut],
   Mariano Prieto [aut],
@@ -45,4 +45,4 @@ Author: Emilio L. Cano [aut, cre] (<https://orcid.org/0000-0002-6101-9755>),
   Paula Martínez [ctb],
   Manuel Alfaro [ctb]
 Repository: CRAN
-Date/Publication: 2023-04-08 18:50:02 UTC
+Date/Publication: 2023-08-22 04:50:02 UTC
